@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://36ku13axo8lh"]
+[gd_scene load_steps=6 format=3 uid="uid://36ku13axo8lh"]
 
-[ext_resource type="Texture2D" uid="uid://ipcfftlpmyda" path="res://25ded-16714412868392-1920.png" id="1_lpsx4"]
+[ext_resource type="Texture2D" uid="uid://gtwpetl52vut" path="res://25ded-16714412868392-1920.png" id="1_lpsx4"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_voar0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kete2"]
 texture = ExtResource("1_lpsx4")
 modulate_color = Color(0.262932, 0.262932, 0.262932, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brb55"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg87t"]
 bg_color = Color(0.268445, 0.674921, 0.64725, 1)
@@ -22,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_voar0")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -51,6 +55,9 @@ theme_override_constants/separation = 16
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_brb55")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tg87t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tg87t")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tg87t")
 text = "Start Game"
 
@@ -58,6 +65,9 @@ text = "Start Game"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_brb55")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tg87t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tg87t")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tg87t")
 text = "Options"
 
@@ -65,6 +75,9 @@ text = "Options"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_brb55")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tg87t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tg87t")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tg87t")
 text = "Quit"
 
@@ -85,3 +98,7 @@ theme_override_font_sizes/font_size = 30
 text = "CHESSSSSNUTTTTS ROPPING ON AN OPEN FIREEE"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_Quit_pressed"]
