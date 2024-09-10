@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b635khl868dyg"]
+[gd_scene load_steps=2 format=3 uid="uid://b635khl868dyg"]
+
+[ext_resource type="Script" path="res://Scenes/Global/level_selector.gd" id="1_nuhg6"]
 
 [node name="Level Selector" type="Control"]
 layout_mode = 3
@@ -7,12 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 709.0
-offset_bottom = 280.0
-text = "This is the level selector"
+script = ExtResource("1_nuhg6")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -21,3 +18,56 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="LevelOne" type="Label" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 231.0
+offset_right = 288.0
+offset_bottom = 267.0
+text = "Level One"
+
+[node name="LevelOne2" type="Label" parent="."]
+offset_left = 503.0
+offset_top = 232.0
+offset_right = 580.0
+offset_bottom = 268.0
+text = "Level Two"
+
+[node name="LevelOne3" type="Label" parent="."]
+offset_left = 795.0
+offset_top = 231.0
+offset_right = 884.0
+offset_bottom = 267.0
+text = "Level Three"
+
+[node name="LevelOne4" type="Label" parent="."]
+offset_left = 208.0
+offset_top = 457.0
+offset_right = 288.0
+offset_bottom = 480.0
+text = "Level Four"
+
+[node name="LevelOne5" type="Label" parent="."]
+offset_left = 516.0
+offset_top = 455.0
+offset_right = 593.0
+offset_bottom = 491.0
+text = "Level Five"
+
+[node name="LevelOne6" type="Label" parent="."]
+offset_left = 806.0
+offset_top = 457.0
+offset_right = 883.0
+offset_bottom = 493.0
+text = "Level Six"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1036.0
+offset_top = 590.0
+offset_right = 1099.0
+offset_bottom = 621.0
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

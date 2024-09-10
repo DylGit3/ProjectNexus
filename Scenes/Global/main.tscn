@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://36ku13axo8lh"]
+[gd_scene load_steps=4 format=3 uid="uid://36ku13axo8lh"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_dl0la"]
-[ext_resource type="AudioStream" uid="uid://dexdudfwpslf2" path="res://Assets/Audio/Music/goodVibes.ogg" id="2_vahg4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brb55"]
 
@@ -93,11 +92,6 @@ theme_override_font_sizes/font_size = 30
 text = "Main Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="goodVibes audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_vahg4")
-volume_db = -45.872
-autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_pressed"]

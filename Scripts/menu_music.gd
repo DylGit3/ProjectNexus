@@ -10,5 +10,9 @@ func _play_music(music: AudioStream, volume = 0.0):
 	volume_db = volume
 	play()
 	
-func play_music_menu():
+func play_music_menu( ):
+	_play_music(menu_music_first)
+
+
+func _on_finished():
 	_play_music(menu_music_first)
