@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://36ku13axo8lh"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_voar0"]
-[ext_resource type="AudioStream" uid="uid://dexdudfwpslf2" path="res://goodVibes.ogg" id="2_60ur4"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_dl0la"]
+[ext_resource type="AudioStream" uid="uid://dexdudfwpslf2" path="res://Assets/Audio/Music/goodVibes.ogg" id="2_vahg4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brb55"]
 
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_voar0")
+script = ExtResource("1_dl0la")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -95,7 +95,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="goodVibes audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_60ur4")
+stream = ExtResource("2_vahg4")
 volume_db = -45.872
 autoplay = true
 

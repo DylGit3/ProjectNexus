@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcpftwtedmiga"]
+
+[ext_resource type="Script" path="res://Scripts/menu_music.gd" id="1_v4461"]
+
+[node name="MenuMusic" type="AudioStreamPlayer"]
+script = ExtResource("1_v4461")
