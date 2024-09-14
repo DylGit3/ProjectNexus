@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 func _on_button_pressed():
 	MenuMusic.play()
 	get_tree().change_scene_to_file("res://Scenes/Global/main.tscn")
+
+
+func _on_level_one_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/level_one.tscn")

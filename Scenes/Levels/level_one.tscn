@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://kudjbebxpiyn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f21d"]
+size = Vector2(1280, 197)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojt6k"]
+size = Vector2(244, 745.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a8tn"]
+size = Vector2(244, 745.25)
+
+[node name="LevelOne" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(600, 616)
+shape = SubResource("RectangleShape2D_0f21d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1280, 328)
+shape = SubResource("RectangleShape2D_ojt6k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-128, 328)
+shape = SubResource("RectangleShape2D_7a8tn")
+
+[node name="Panel" type="Panel" parent="StaticBody2D"]
+offset_left = -8.0
+offset_top = 512.0
+offset_right = 1216.0
+offset_bottom = 624.0
