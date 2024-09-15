@@ -23,6 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LevelOneButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 97.0
 offset_top = 69.0
 offset_right = 406.0

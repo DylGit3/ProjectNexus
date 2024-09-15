@@ -9,7 +9,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
-	MenuMusic.stop()
 	get_tree().change_scene_to_file("res://Scenes/Global/level_selector.tscn")
 
 func _on_options_pressed() -> void:
