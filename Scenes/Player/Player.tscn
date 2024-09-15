@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://dd4wg4onyrmqy"]
+[gd_scene load_steps=3 format=3 uid="uid://dd4wg4onyrmqy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x65or"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gyoaf"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CapsuleShape2D_x65or")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.195, -11.495)
+rotation = 0.00839692
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_gyoaf")
+animation = &"Jump"
