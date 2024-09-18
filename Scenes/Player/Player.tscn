@@ -1,7 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://dd4wg4onyrmqy"]
 
 [ext_resource type="Texture2D" uid="uid://bvu2ryb66coqi" path="res://Assets/Unsorted/Charecter stuff/_Hit.png" id="1_6loyd"]
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_bmdyc"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_bmdyc"]
 [ext_resource type="Texture2D" uid="uid://csltc6ykhyfg7" path="res://Assets/Unsorted/Charecter stuff/_Idle.png" id="2_2ebnq"]
 [ext_resource type="Texture2D" uid="uid://bok0mr54qttqa" path="res://Assets/Unsorted/Charecter stuff/_Fall.png" id="2_nvcu3"]
 [ext_resource type="Texture2D" uid="uid://d1mqpabbw5fkk" path="res://Assets/Unsorted/Charecter stuff/_Jump.png" id="3_ilnic"]
