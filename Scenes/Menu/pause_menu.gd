@@ -4,28 +4,27 @@ func _ready():
 	$AnimationPlayer.play("RESET")
 
 func resume():
-	get_tree().pause = false
+	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
-	
+	print("Resuming the game")
+
 func pause():
-	get_tree().pause = true
+	get_tree().paused = true
 	$AnimationPlayer.play("blur")
-	
+	print("Pausing the game")
+
 func testEsc():
-	if Input.is_action_just_pressed("Escape") and get_tree().paused == false:
-		pause()
-	elif Input.is_action_just_pressed("Escape") and get_tree().paused:
-		resume()
-
-# Called when the node enters the scene tree for the first time.
-# func _ready() -> void:
-	# pass # Replace with function body.
-
+	if Input.is_action_just_pressed("Escape"):  # Ensure "escape" is correct in the Input Map
+		if get_tree().paused:
+			print("Escape pressed - game is paused, resuming...")
+			resume()
+		else:
+			print("Escape pressed - game is not paused, pausing...")
+			pause()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-# func _process(delta: float) -> void:
-	# pass
-
+func _process(delta):
+	testEsc()
 
 func _on_resume_pressed() -> void:
 	resume()
@@ -33,9 +32,5 @@ func _on_resume_pressed() -> void:
 func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 
-
 func _on_quit_pressed() -> void:
 	get_tree().quit()
-	
-func _process(delta):
-	testEsc()
