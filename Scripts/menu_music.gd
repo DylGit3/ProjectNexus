@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const menu_music_first = preload("res://Assets/Audio/Music/goodVibes.ogg")
+const menu_music_first = preload("res://Assets/Audio/Music/spooky1.ogg")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:
