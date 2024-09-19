@@ -24,20 +24,20 @@ func _physics_process(delta: float):
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_up") and is_on_floor() and is_crouching:
+	if Input.is_action_just_pressed("move_up") and is_on_floor() and is_crouching:
 		velocity.y = JUMP_VELOCITY
 		anim.play("Crouch")
-	elif Input.is_action_just_pressed("ui_up") and is_on_floor():
+	elif Input.is_action_just_pressed("move_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		anim.play("Jump")
 	
 	# Handle crouch
-	if Input.is_action_just_pressed("ui_down") and is_on_floor():
+	if Input.is_action_just_pressed("crouch") and is_on_floor():
 		anim.play("Crouch")
 
-	if Input.is_action_just_pressed("Crouch"):
+	if Input.is_action_just_pressed("crouch"):
 		crouch()
-	elif Input.is_action_just_released("Crouch"):
+	elif Input.is_action_just_released("crouch"):
 		stand_from_crouch()
 
 	# Get the input direction and handle the movement/deceleration.
