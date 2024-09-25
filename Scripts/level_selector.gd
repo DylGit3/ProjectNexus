@@ -14,4 +14,7 @@ func _on_button_pressed():
 func _on_level_one_button_pressed() -> void:
 	MenuMusic.stop()
 	get_tree().change_scene_to_file("res://Scenes/Levels/level_one.tscn")
-	
+
+func _on_level_two_button_pressed() -> void:
+	MenuMusic.stop()
+	get_tree().change_scene_to_file("res://Scenes/Levels/level_two.tscn")

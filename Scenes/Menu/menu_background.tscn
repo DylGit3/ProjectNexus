@@ -40,8 +40,8 @@ scale = Vector2(1.71875, 2.3203)
 texture = ExtResource("5_v4vax")
 
 [node name="UnsaturatedAnuc" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(1348, 584)
-scale = Vector2(0.205502, 0.194444)
+position = Vector2(1330, 587)
+scale = Vector2(0.0671524, 0.0916665)
 texture = ExtResource("6_ma58q")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b635khl868dyg"]
+[gd_scene load_steps=6 format=3 uid="uid://b635khl868dyg"]
 
 [ext_resource type="Script" path="res://Scripts/level_selector.gd" id="1_nuhg6"]
 [ext_resource type="Texture2D" uid="uid://bbvrxvek8pyc" path="res://Assets/Pictures/lava_lake_test.svg" id="2_nxho8"]
 [ext_resource type="Texture2D" uid="uid://bd4gh2gssj10n" path="res://Assets/Pictures/cavePicForLevelSelect.png" id="3_xo2sh"]
+[ext_resource type="PackedScene" uid="uid://ccmbm872r1oyv" path="res://Scenes/Menu/menu_background.tscn" id="4_6msv6"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ocg04"]
 
@@ -42,7 +43,7 @@ offset_left = 197.0
 offset_top = 243.0
 offset_right = 287.0
 offset_bottom = 280.0
-text = "Level One:"
+text = "Level One"
 
 [node name="LevelTwo" type="Label" parent="."]
 layout_mode = 0
@@ -98,6 +99,8 @@ position = Vector2(152, 84.375)
 scale = Vector2(0.506667, 0.421875)
 texture = ExtResource("3_xo2sh")
 
+[node name="BG" parent="." instance=ExtResource("4_6msv6")]
+
 [connection signal="pressed" from="LevelOneButton" to="." method="_on_level_one_button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="LevelTwoButton" to="." method="_on_level_one_button_pressed"]
+[connection signal="pressed" from="LevelTwoButton" to="." method="_on_level_two_button_pressed"]
