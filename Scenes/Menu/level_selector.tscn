@@ -26,10 +26,10 @@ grow_vertical = 2
 
 [node name="LevelOneButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 96.0
-offset_top = 64.0
-offset_right = 400.0
-offset_bottom = 232.0
+offset_left = 296.0
+offset_top = 344.0
+offset_right = 600.0
+offset_bottom = 512.0
 icon = SubResource("CompressedTexture2D_ocg04")
 
 [node name="LavaPic" type="Sprite2D" parent="LevelOneButton"]
@@ -39,10 +39,10 @@ texture = ExtResource("2_nxho8")
 
 [node name="LevelOne" type="Label" parent="."]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 243.0
-offset_right = 287.0
-offset_bottom = 280.0
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 282.0
+offset_bottom = 293.0
 text = "Level One"
 
 [node name="LevelTwo" type="Label" parent="."]
@@ -88,15 +88,15 @@ text = "Secret Level"
 
 [node name="LevelTwoButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 296.0
-offset_top = 344.0
-offset_right = 600.0
-offset_bottom = 512.0
+offset_left = 80.0
+offset_top = 72.0
+offset_right = 384.0
+offset_bottom = 248.0
 icon = SubResource("CompressedTexture2D_ocg04")
 
 [node name="CavePic" type="Sprite2D" parent="LevelTwoButton"]
-position = Vector2(152, 84.375)
-scale = Vector2(0.506667, 0.421875)
+position = Vector2(152, 88)
+scale = Vector2(0.506667, 0.44)
 texture = ExtResource("3_xo2sh")
 
 [node name="BG" parent="." instance=ExtResource("4_6msv6")]
