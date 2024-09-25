@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4i5ovowp2kgm"]
+[gd_scene load_steps=4 format=3 uid="uid://d4i5ovowp2kgm"]
 
 [ext_resource type="Script" path="res://Scripts/options.gd" id="1_0qk6g"]
 [ext_resource type="Script" path="res://Scripts/audio_options.gd" id="2_erkgf"]
+[ext_resource type="PackedScene" uid="uid://ccmbm872r1oyv" path="res://Scenes/Menu/menu_background.tscn" id="3_h07sq"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -83,6 +84,8 @@ offset_top = 471.0
 offset_right = 841.0
 offset_bottom = 502.0
 text = "Back"
+
+[node name="BG" parent="." instance=ExtResource("3_h07sq")]
 
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/MasterSlider" to="AudioOptions" method="_on_master_slider_mouse_exited"]
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/SFXSlider" to="AudioOptions" method="_on_sfx_slider_mouse_exited"]

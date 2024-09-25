@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b635khl868dyg"]
+[gd_scene load_steps=5 format=3 uid="uid://b635khl868dyg"]
 
 [ext_resource type="Script" path="res://Scripts/level_selector.gd" id="1_nuhg6"]
 [ext_resource type="Texture2D" uid="uid://bbvrxvek8pyc" path="res://Assets/Pictures/lava_lake_test.svg" id="2_nxho8"]
+[ext_resource type="Texture2D" uid="uid://bd4gh2gssj10n" path="res://Assets/Pictures/cavePicForLevelSelect.png" id="3_xo2sh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ocg04"]
 
@@ -24,64 +25,48 @@ grow_vertical = 2
 
 [node name="LevelOneButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 97.0
-offset_top = 69.0
-offset_right = 406.0
-offset_bottom = 246.0
+offset_left = 96.0
+offset_top = 64.0
+offset_right = 400.0
+offset_bottom = 232.0
 icon = SubResource("CompressedTexture2D_ocg04")
 
-[node name="LavaLakeTest" type="Sprite2D" parent="LevelOneButton"]
-position = Vector2(152, 88)
-scale = Vector2(0.991643, 0.982315)
+[node name="LavaPic" type="Sprite2D" parent="LevelOneButton"]
+position = Vector2(152, 84)
+scale = Vector2(0.968153, 0.933333)
 texture = ExtResource("2_nxho8")
 
 [node name="LevelOne" type="Label" parent="."]
 layout_mode = 0
-offset_left = 194.0
-offset_top = 248.0
-offset_right = 271.0
-offset_bottom = 284.0
-text = "Level One"
-
-[node name="LevelOne2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 508.0
+offset_left = 197.0
 offset_top = 243.0
-offset_right = 585.0
-offset_bottom = 272.0
+offset_right = 287.0
+offset_bottom = 280.0
+text = "Level One:"
+
+[node name="LevelTwo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 519.0
+offset_right = 485.0
+offset_bottom = 548.0
 text = "Level Two"
 
-[node name="LevelOne3" type="Label" parent="."]
+[node name="LevelThree" type="Label" parent="."]
 layout_mode = 0
-offset_left = 805.0
-offset_top = 244.0
-offset_right = 894.0
-offset_bottom = 280.0
+offset_left = 687.0
+offset_top = 249.0
+offset_right = 776.0
+offset_bottom = 285.0
 text = "Level Three"
 
-[node name="LevelOne4" type="Label" parent="."]
+[node name="LevelFour" type="Label" parent="."]
 layout_mode = 0
-offset_left = 199.0
-offset_top = 480.0
-offset_right = 279.0
-offset_bottom = 503.0
+offset_left = 888.0
+offset_top = 494.0
+offset_right = 968.0
+offset_bottom = 517.0
 text = "Level Four"
-
-[node name="LevelOne5" type="Label" parent="."]
-layout_mode = 0
-offset_left = 507.0
-offset_top = 480.0
-offset_right = 584.0
-offset_bottom = 503.0
-text = "Level Five"
-
-[node name="LevelOne6" type="Label" parent="."]
-layout_mode = 0
-offset_left = 814.0
-offset_top = 486.0
-offset_right = 887.0
-offset_bottom = 522.0
-text = "Level Six"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
@@ -91,5 +76,28 @@ offset_right = 1099.0
 offset_bottom = 621.0
 text = "Back"
 
+[node name="SecretLevel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1034.0
+offset_top = 15.0
+offset_right = 1127.0
+offset_bottom = 51.0
+text = "Secret Level"
+
+[node name="LevelTwoButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 344.0
+offset_right = 600.0
+offset_bottom = 512.0
+icon = SubResource("CompressedTexture2D_ocg04")
+
+[node name="CavePic" type="Sprite2D" parent="LevelTwoButton"]
+position = Vector2(152, 84.375)
+scale = Vector2(0.506667, 0.421875)
+texture = ExtResource("3_xo2sh")
+
 [connection signal="pressed" from="LevelOneButton" to="." method="_on_level_one_button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="LevelTwoButton" to="." method="_on_level_one_button_pressed"]

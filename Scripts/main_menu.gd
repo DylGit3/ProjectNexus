@@ -4,10 +4,6 @@ extends Control
 func _ready():
 	MenuMusic.play_music_menu()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/level_selector.tscn")
 

@@ -1,20 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdvp8ld2rtoow"]
-
-[ext_resource type="Texture2D" uid="uid://dcnqyfyq80ajb" path="res://Assets/Lvl 1 enviorment/cave_back.png" id="1_q2165"]
-[ext_resource type="Texture2D" uid="uid://ct3fkg7fo5tnk" path="res://Assets/Lvl 1 enviorment/cave_middle.png" id="2_6m32q"]
+[gd_scene format=3 uid="uid://62ehwobw61a7"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-
-[node name="back" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(1094, 512)
-scale = Vector2(2.26458, 2.13333)
-texture = ExtResource("1_q2165")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
-
-[node name="CaveMiddle" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(1098, 518)
-scale = Vector2(2.27708, 2.11667)
-texture = ExtResource("2_6m32q")

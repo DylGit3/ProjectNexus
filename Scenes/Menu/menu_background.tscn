@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccmbm872r1oyv"]
+[gd_scene load_steps=13 format=3 uid="uid://ccmbm872r1oyv"]
 
-[ext_resource type="Script" path="res://Scenes/Menu/menu_background.gd" id="1_byshs"]
+[ext_resource type="Script" path="res://Scripts/menu_background.gd" id="1_byshs"]
 [ext_resource type="Texture2D" uid="uid://dltnj3yhjdrpd" path="res://Assets/Lvl 1 enviorment/Layer_0009_2.png" id="2_hwhg3"]
 [ext_resource type="Texture2D" uid="uid://dklsh7x0fm728" path="res://Assets/Lvl 1 enviorment/Layer_0008_3.png" id="3_jswqc"]
 [ext_resource type="Texture2D" uid="uid://nyoq3l64k6no" path="res://Assets/Lvl 1 enviorment/Layer_0007_Lights.png" id="4_ky166"]
 [ext_resource type="Texture2D" uid="uid://b2bvqj6ovvox2" path="res://Assets/Lvl 1 enviorment/Layer_0006_4.png" id="5_v4vax"]
+[ext_resource type="Texture2D" uid="uid://c80y2g5nxu6hy" path="res://Assets/Unsorted/unsaturated_anuc.png" id="6_ma58q"]
 [ext_resource type="Texture2D" uid="uid://ol6cpc132fp" path="res://Assets/Lvl 1 enviorment/Layer_0003_6.png" id="6_nan5e"]
 [ext_resource type="Texture2D" uid="uid://bfiafudl3uh21" path="res://Assets/Lvl 1 enviorment/Layer_0005_5.png" id="7_rn2tr"]
 [ext_resource type="Texture2D" uid="uid://40d08ljmorye" path="res://Assets/Lvl 1 enviorment/Layer_0004_Lights.png" id="8_rgamo"]
@@ -37,6 +38,11 @@ texture = ExtResource("4_ky166")
 position = Vector2(797.5, -130)
 scale = Vector2(1.71875, 2.3203)
 texture = ExtResource("5_v4vax")
+
+[node name="UnsaturatedAnuc" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1348, 584)
+scale = Vector2(0.205502, 0.194444)
+texture = ExtResource("6_ma58q")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.7, 0.7)
