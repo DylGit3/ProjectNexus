@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4i5ovowp2kgm"]
+[gd_scene load_steps=5 format=3 uid="uid://d4i5ovowp2kgm"]
 
 [ext_resource type="Script" path="res://Scripts/options.gd" id="1_0qk6g"]
 [ext_resource type="Script" path="res://Scripts/audio_options.gd" id="2_erkgf"]
+[ext_resource type="Theme" uid="uid://bmr40juj7gfgd" path="res://Resources/button_default.tres" id="3_7i74k"]
 [ext_resource type="PackedScene" uid="uid://ccmbm872r1oyv" path="res://Scenes/Menu/menu_background.tscn" id="3_h07sq"]
 
 [node name="Options" type="Control"]
@@ -31,10 +32,10 @@ script = ExtResource("2_erkgf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions"]
 layout_mode = 0
-offset_left = 111.0
-offset_top = 101.0
-offset_right = 676.0
-offset_bottom = 356.0
+offset_left = 112.0
+offset_top = 5.0
+offset_right = 677.0
+offset_bottom = 260.0
 
 [node name="MasterLabel" type="Label" parent="AudioOptions/VBoxContainer"]
 layout_mode = 2
@@ -71,19 +72,31 @@ step = 0.05
 
 [node name="Confirm" type="Button" parent="AudioOptions"]
 layout_mode = 0
-offset_left = 798.0
-offset_top = 514.0
-offset_right = 939.0
-offset_bottom = 545.0
+offset_left = 795.0
+offset_top = 470.0
+offset_right = 975.0
+offset_bottom = 505.0
+theme = ExtResource("3_7i74k")
 text = "Confirm Changes"
 
 [node name="Escape" type="Button" parent="AudioOptions"]
 layout_mode = 0
 offset_left = 796.0
-offset_top = 471.0
-offset_right = 841.0
-offset_bottom = 502.0
+offset_top = 511.0
+offset_right = 881.0
+offset_bottom = 542.0
+theme = ExtResource("3_7i74k")
 text = "Back"
+
+[node name="Save" type="Button" parent="AudioOptions"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 273.0
+offset_right = 270.0
+offset_bottom = 325.0
+theme = ExtResource("3_7i74k")
+theme_override_font_sizes/font_size = 24
+text = "Save Game"
 
 [node name="BG" parent="." instance=ExtResource("3_h07sq")]
 
@@ -92,3 +105,4 @@ text = "Back"
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/MusicSlider" to="AudioOptions" method="_on_music_slider_mouse_exited"]
 [connection signal="pressed" from="AudioOptions/Confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="AudioOptions/Escape" to="." method="_on_escape_pressed"]
+[connection signal="pressed" from="AudioOptions/Save" to="." method="_on_save_pressed"]

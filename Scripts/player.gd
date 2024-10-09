@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-
+var health = 3
 const JUMP_VELOCITY = -400.0
 
-var speed = 250.0
+var speed = 150.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
 @onready var cshape = $CollisionShape2D
@@ -88,7 +88,7 @@ func crouch():
 	if is_crouching:
 		return
 	is_crouching = true
-	speed = 175.0
+	speed = 100.0
 	cshape.shape = crouching_shape
 	cshape.position.x = -2.075
 	cshape.position.y = -7
@@ -98,7 +98,7 @@ func stand_from_crouch():
 	if !is_crouching:
 		return
 	is_crouching = false
-	speed = 250.0
+	speed = 150.0
 	cshape.shape = standing_shape
 	cshape.position.x = -2.765
 	cshape.position.y = -9.715

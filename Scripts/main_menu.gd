@@ -2,6 +2,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Utility.saveGame()
+	Utility.loadGame()
 	MenuMusic.play_music_menu()
 
 func _on_start_pressed() -> void:

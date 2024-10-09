@@ -15,3 +15,7 @@ func _on_confirm_pressed():
 
 func _on_escape_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menu/main.tscn")
+
+
+func _on_save_pressed() -> void:
+	Utility.saveGame()
