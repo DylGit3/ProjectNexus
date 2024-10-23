@@ -1314,4 +1314,28 @@ position = Vector2(96, 256)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Skeleton" parent="Mobs" instance=ExtResource("5_oq6nl")]
-position = Vector2(409, 308)
+position = Vector2(408, 328)
+
+[node name="Skeleton2" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(1240, 328)
+
+[node name="Skeleton3" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(1664, 336)
+
+[node name="Skeleton4" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(3432, 320)
+
+[node name="Skeleton5" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(1384, 328)
+
+[node name="Skeleton6" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(2136, 320)
+
+[node name="Skeleton7" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(2664, 328)
+
+[node name="Skeleton8" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(2664, 288)
+
+[node name="Skeleton9" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(3040, 328)

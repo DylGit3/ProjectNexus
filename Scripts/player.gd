@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-var health = 3
+var health = Game.playerHP
+var gold = Game.gold
 const JUMP_VELOCITY = -400.0
 
 var speed = 150.0
@@ -15,6 +16,7 @@ var is_crouching = false
 var direction_looking = 1
 
 var is_attacking = false
+var attack_first_blocked = false
 
 
 func _process(_delta):
@@ -37,10 +39,10 @@ func _physics_process(delta: float):
 		get_node("AnimatedSprite2D").flip_h = false
 		get_node("hitbox1").position.x = 0
 
-	if Input.is_action_just_pressed("attackFirst"):
+	if Input.is_action_just_pressed("attackFirst") and is_attacking == false:
 		$AnimationPlayer.play("AttackFirst")
 		is_attacking = true
-		velocity.x *= .25
+		velocity.x *= .33
 		await get_tree().create_timer(0.4).timeout
 		is_attacking = false
 

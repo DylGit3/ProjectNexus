@@ -29,6 +29,10 @@ Utility="*res://Scripts/GlobalScript/Utility.gd"
 window/size/mode=3
 window/stretch/mode="viewport"
 
+[global_group]
+
+playerDamage=""
+
 [input]
 
 crouch={
