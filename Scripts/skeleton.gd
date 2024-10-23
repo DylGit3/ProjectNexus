@@ -16,6 +16,7 @@ func _physics_process(delta: float):
 		get_node("attackarea").monitoring = false
 		await get_node("AnimationPlayer").animation_finished
 		health = -1
+		$hurtbox/hurtbox.disabled = true
 	elif health > 0:
 		velocity.y += gravity * delta
 		
@@ -45,6 +46,7 @@ func _physics_process(delta: float):
 				if get_node("AnimatedSprite2D").animation != "death":
 					$AnimationPlayer.play("idle")
 				velocity.x = 0
+			
 				
 		move_and_slide()
 	

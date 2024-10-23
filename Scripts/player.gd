@@ -18,14 +18,18 @@ var direction_looking = 1
 var is_attacking = false
 var attack_first_blocked = false
 
+var is_hurt = false
+
 
 func _process(_delta):
 	return
 
 func _physics_process(delta: float):
 	# Add the gravity.
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	
 	
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction == 1:
@@ -85,12 +89,21 @@ func _physics_process(delta: float):
 		
 		if is_crouching and direction_looking == 1:
 			cshape.position.x = -2.075
+			$Area2D/bodycollision.position.x = 1
 		elif is_crouching and direction_looking == -1:
 			cshape.position.x = 2.125
+			$Area2D/bodycollision.position.x = cshape.position.x * 3
 		elif !is_crouching and direction_looking == 1:
-			cshape.position.x = -2.765
+			cshape.position.x = -2.76
+			$Area2D/bodycollision.position.x = 0
 		elif !is_crouching and direction_looking == -1:
 			cshape.position.x = 2.645
+			$Area2D/bodycollision.position.x = cshape.position.x * 3
+	
+	if is_hurt == true:
+		anim.play("Hurt")
+		await get_tree().create_timer(0.4).timeout
+		is_hurt = false
 	
 	move_and_slide()
 
@@ -102,6 +115,9 @@ func crouch():
 	cshape.shape = crouching_shape
 	cshape.position.x = -2.075
 	cshape.position.y = -7
+	$Area2D/bodycollision.shape = cshape.shape
+	$Area2D/bodycollision.position.x = 0
+	$Area2D/bodycollision.position.y = 3.5
 
 func stand_from_crouch():
 	if !is_crouching:
@@ -111,3 +127,12 @@ func stand_from_crouch():
 	cshape.shape = standing_shape
 	cshape.position.x = -2.765
 	cshape.position.y = -9.715
+	$Area2D/bodycollision.shape = cshape.shape
+	$Area2D/bodycollision.position.x = 0
+	$Area2D/bodycollision.position.y = 0
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("skeletonDamage"):
+		health -= Game.skeletonDMG
+		is_hurt = true

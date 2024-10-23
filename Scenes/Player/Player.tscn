@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://dd4wg4onyrmqy"]
+[gd_scene load_steps=70 format=3 uid="uid://dd4wg4onyrmqy"]
 
 [ext_resource type="Texture2D" uid="uid://bvu2ryb66coqi" path="res://Assets/Charecter stuff/_Hit.png" id="1_6loyd"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bmdyc"]
@@ -531,7 +531,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_aef5a"]
 resource_name = "Hurt"
-length = 0.1
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -551,10 +551,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 0]
 }
 
 [sub_resource type="Animation" id="Animation_5rkqj"]
@@ -710,6 +710,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ej7hd"]
 size = Vector2(15, 9)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n104n"]
+radius = 7.15
+height = 27.44
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_bmdyc")
 
@@ -743,3 +747,13 @@ autoplay = "Idle"
 [node name="collisionhitbox1" type="CollisionShape2D" parent="hitbox1/attackArea"]
 position = Vector2(16, -7)
 shape = SubResource("RectangleShape2D_ej7hd")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2.765, -9.715)
+scale = Vector2(0.715, 0.715)
+
+[node name="bodycollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.011, 0.031)
+shape = SubResource("CapsuleShape2D_n104n")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
