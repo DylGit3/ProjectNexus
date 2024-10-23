@@ -1,7 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdvp8ld2rtoow"]
 
-[ext_resource type="Texture2D" uid="uid://dcnqyfyq80ajb" path="res://Assets/Lvl 1 enviorment/layers for level 1/cave_back.png" id="1_q2165"]
-[ext_resource type="Texture2D" uid="uid://ct3fkg7fo5tnk" path="res://Assets/Lvl 1 enviorment/layers for level 1/cave_middle.png" id="2_6m32q"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r6h07"]
+load_path = "res://.godot/imported/cave_back.png-b60f7aa3848c6e8a66884a2615512e09.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_erm1o"]
+load_path = "res://.godot/imported/cave_middle.png-1cbafb2147cf2faa91534cd4bfbd84b4.ctex"
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -11,7 +14,7 @@ motion_mirroring = Vector2(1170, 0)
 [node name="back" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(588, 240)
 scale = Vector2(1.225, 1)
-texture = ExtResource("1_q2165")
+texture = SubResource("CompressedTexture2D_r6h07")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.7, 1)
@@ -20,4 +23,4 @@ motion_mirroring = Vector2(1170, 0)
 [node name="CaveMiddle" type="Sprite2D" parent="ParallaxLayer2"]
 position = Vector2(588, 245)
 scale = Vector2(1.225, 0.979165)
-texture = ExtResource("2_6m32q")
+texture = SubResource("CompressedTexture2D_erm1o")
