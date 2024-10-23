@@ -816,7 +816,7 @@ texture = ExtResource("4_pq6rn")
 56:33/0 = 0
 56:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 58:33/0 = 0
-58:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+58:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.84375, -8, 8, -8, 8, 8, -0.53125, 8, -0.15625, 0.5)
 59:33/0 = 0
 59:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 60:33/0 = 0
@@ -836,7 +836,7 @@ texture = ExtResource("4_pq6rn")
 56:34/0 = 0
 56:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 58:34/0 = 0
-58:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+58:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.59375, -8, 8, -8, 8, 8, -0.53125, 8)
 59:34/0 = 0
 59:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 60:34/0 = 0
@@ -859,7 +859,7 @@ texture = ExtResource("4_pq6rn")
 56:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 57:35/0 = 0
 58:35/0 = 0
-58:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+58:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.59375, -8, 8, -8, 8, 8, -8, 8, -8, -1)
 59:35/0 = 0
 59:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 60:35/0 = 0
@@ -1283,7 +1283,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	text = \"HP: \" + str(get_node(\"../../Player/Player\").health)
+	text = \"HP: \" + str(get_node(\"../../Player/Player\").health) + '\\n' + \"Gold: \" + str(get_node(\"../../Player/Player\").gold)
 "
 
 [node name="LevelTwo" type="Node2D"]
