@@ -717,11 +717,10 @@ animation = &"Attack"
 [node name="PlayerDetection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-visible = false
 position = Vector2(-2, -11)
 shape = SubResource("CircleShape2D_ru8ei")
 
-[node name="hurtbox" type="Area2D" parent="."]
+[node name="hurtbox" type="Area2D" parent="." groups=["skeletonDamage"]]
 
 [node name="hurtbox" type="CollisionShape2D" parent="hurtbox"]
 position = Vector2(7.5, -14.5)
@@ -753,4 +752,5 @@ shape = SubResource("RectangleShape2D_5ofgx")
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="body_entered" from="attackarea" to="." method="_on_attackarea_body_entered"]
+[connection signal="body_exited" from="attackarea" to="." method="_on_attackarea_body_exited"]
 [connection signal="area_entered" from="areabody" to="." method="_on_areabody_area_entered"]
