@@ -1343,7 +1343,7 @@ script = SubResource("GDScript_rhbg1")
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("1_e08lh")]
-position = Vector2(4922, 277)
+position = Vector2(92, 240)
 
 [node name="Mobs" type="Node2D" parent="."]
 
