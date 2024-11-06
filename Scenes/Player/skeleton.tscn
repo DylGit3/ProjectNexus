@@ -733,10 +733,10 @@ libraries = {
 "": SubResource("AnimationLibrary_vxodw")
 }
 
-[node name="attackarea" type="Area2D" parent="."]
+[node name="attackArea" type="Area2D" parent="."]
 position = Vector2(17, -9)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attackarea"]
+[node name="attackArea" type="CollisionShape2D" parent="attackArea"]
 position = Vector2(-11, -5)
 shape = SubResource("CircleShape2D_on0av")
 
@@ -752,6 +752,6 @@ shape = SubResource("RectangleShape2D_5ofgx")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
-[connection signal="body_entered" from="attackarea" to="." method="_on_attackarea_body_entered"]
-[connection signal="body_exited" from="attackarea" to="." method="_on_attackarea_body_exited"]
+[connection signal="body_entered" from="attackArea" to="." method="_on_attackarea_body_entered"]
+[connection signal="body_exited" from="attackArea" to="." method="_on_attack_area_body_exited"]
 [connection signal="area_entered" from="areabody" to="." method="_on_areabody_area_entered"]

@@ -4,4 +4,5 @@ extends Node
 var playerHP = 5
 var gold = 0
 var playerDMG = 1
-var skeletonDMG = 2
+var skeletonDMG = 1
+var mushroomDMG = 2

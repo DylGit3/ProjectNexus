@@ -7,6 +7,7 @@ var looking = 1
 var chase = false
 var SPEED = 125.0
 var is_attacking = false
+var in_battle = false
 
 func _physics_process(delta: float):
 	if health <= 0 and health >= -99:
@@ -15,7 +16,7 @@ func _physics_process(delta: float):
 		$AnimationPlayer.play("death")
 		get_node("body").disabled = true
 		get_node("PlayerDetection").monitoring = false
-		get_node("attackarea").monitoring = false
+		get_node("attackArea").monitoring = false
 		await get_node("AnimationPlayer").animation_finished
 		$hurtbox/hurtbox.disabled = true
 	elif health > 0:
@@ -31,14 +32,14 @@ func _physics_process(delta: float):
 				if direction.x > 0:
 					looking = 1
 					get_node("AnimatedSprite2D").flip_h = false
-					get_node("attackarea").position.x = 17
+					get_node("attackArea").position.x = 17
 					get_node("body").position.x = -2
 					get_node("areabody/areacollision").position.x = -2
 					get_node("hurtbox").position.x = 0
 				else:
 					looking = -1
 					get_node("AnimatedSprite2D").flip_h = true
-					get_node("attackarea").position.x = 5
+					get_node("attackArea").position.x = 5
 					get_node("body").position.x = 2
 					get_node("areabody/areacollision").position.x = 2
 					get_node("hurtbox").position.x = -14
@@ -61,17 +62,22 @@ func _on_player_detection_body_exited(body: Node2D) -> void:
 
 func _on_attackarea_body_entered(body: Node2D):
 	if body.name == "Player":
-		velocity.x = .33
-		$AnimationPlayer.play("attack")
-		if looking == -1:
-			get_node("AnimatedSprite2D").offset.x -= 17
-		is_attacking = true
-		await get_node("AnimationPlayer").animation_finished
-		is_attacking = false
+		in_battle = true
+		while in_battle:
+			velocity.x = 0
+			$AnimationPlayer.play("attack")
+			if looking == -1:
+				get_node("AnimatedSprite2D").offset.x -= 17
+			is_attacking = true
+			await get_node("AnimationPlayer").animation_finished
+			if looking == -1:
+				get_node("AnimatedSprite2D").offset.x += 17
+			is_attacking = false
 
 
 func _on_areabody_area_entered(area: Area2D):
 	if area.is_in_group("playerDamage"):
 		health -= Game.playerDMG
 
-# keep attacking if player is in range
+func _on_attack_area_body_exited(body: Node2D) -> void:
+	in_battle = false
