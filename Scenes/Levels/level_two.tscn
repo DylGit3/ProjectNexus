@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://cuv1rs2r2l7hh"]
+[gd_scene load_steps=13 format=4 uid="uid://cuv1rs2r2l7hh"]
 
 [ext_resource type="PackedScene" uid="uid://dd4wg4onyrmqy" path="res://Scenes/Player/Player.tscn" id="1_e08lh"]
 [ext_resource type="PackedScene" uid="uid://pmcdemxkor8q" path="res://Scenes/Menu/pause_menu.tscn" id="3_t2637"]
 [ext_resource type="Texture2D" uid="uid://bv56g18xsh6qb" path="res://Assets/Lvl 1 enviorment/mainlev_build.png" id="4_pq6rn"]
+[ext_resource type="PackedScene" uid="uid://t150qvmea0cr" path="res://Scenes/Player/mushroom.tscn" id="5_25c0r"]
 [ext_resource type="Script" path="res://Scenes/Levels/area_2d_next_lvl.gd" id="5_76j6v"]
 [ext_resource type="PackedScene" uid="uid://8xc8idfu6ol3" path="res://Scenes/Player/skeleton.tscn" id="5_oq6nl"]
 
@@ -1348,7 +1349,7 @@ position = Vector2(92, 240)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Skeleton" parent="Mobs" instance=ExtResource("5_oq6nl")]
-position = Vector2(408, 328)
+position = Vector2(1024, 288)
 
 [node name="Skeleton2" parent="Mobs" instance=ExtResource("5_oq6nl")]
 position = Vector2(1240, 328)
@@ -1373,6 +1374,9 @@ position = Vector2(3486, 316)
 
 [node name="Skeleton9" parent="Mobs" instance=ExtResource("5_oq6nl")]
 position = Vector2(3026, 241)
+
+[node name="mushroom" parent="Mobs" instance=ExtResource("5_25c0r")]
+position = Vector2(408, 328)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("5_76j6v")
