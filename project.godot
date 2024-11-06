@@ -33,6 +33,7 @@ window/stretch/mode="viewport"
 
 playerDamage=""
 skeletonDamage=""
+mushroomDamage=""
 
 [input]
 

@@ -543,7 +543,7 @@ tracks/4/path = NodePath("hurtbox/hurtbox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0666667, 0.4, 1.46667),
+"times": PackedFloat32Array(0.0666667, 0.6, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -700,7 +700,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_on0av"]
-radius = 16.2788
+radius = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ofgx"]
 size = Vector2(12, 22)
@@ -709,7 +709,7 @@ size = Vector2(12, 22)
 script = ExtResource("1_3gy7u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(5, -13.8636)
 scale = Vector2(0.872093, 0.750548)
 sprite_frames = SubResource("SpriteFrames_wgp42")
 animation = &"Attack"
@@ -733,10 +733,10 @@ libraries = {
 "": SubResource("AnimationLibrary_vxodw")
 }
 
-[node name="attackarea" type="Area2D" parent="."]
+[node name="attackArea" type="Area2D" parent="."]
 position = Vector2(17, -9)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attackarea"]
+[node name="attackArea" type="CollisionShape2D" parent="attackArea"]
 position = Vector2(-11, -5)
 shape = SubResource("CircleShape2D_on0av")
 
@@ -752,6 +752,6 @@ shape = SubResource("RectangleShape2D_5ofgx")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
-[connection signal="body_entered" from="attackarea" to="." method="_on_attackarea_body_entered"]
-[connection signal="body_exited" from="attackarea" to="." method="_on_attackarea_body_exited"]
+[connection signal="body_entered" from="attackArea" to="." method="_on_attackarea_body_entered"]
+[connection signal="body_exited" from="attackArea" to="." method="_on_attack_area_body_exited"]
 [connection signal="area_entered" from="areabody" to="." method="_on_areabody_area_entered"]

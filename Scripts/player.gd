@@ -102,6 +102,8 @@ func _physics_process(delta: float):
 	
 	if is_hurt == true:
 		anim.play("Hurt")
+		velocity.x = 0
+		velocity.y = 0
 		await get_tree().create_timer(0.4).timeout
 		is_hurt = false
 	
@@ -133,6 +135,10 @@ func stand_from_crouch():
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("skeletonDamage"):
-		health -= Game.skeletonDMG
-		is_hurt = true
+	if not is_hurt:
+		if area.is_in_group("skeletonDamage"):
+			health -= Game.skeletonDMG
+			is_hurt = true
+		if area.is_in_group("mushroomDamage"):
+			health -= Game.mushroomDMG
+			is_hurt = true
