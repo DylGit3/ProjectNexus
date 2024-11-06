@@ -80,4 +80,5 @@ func _on_areabody_area_entered(area: Area2D):
 		health -= Game.playerDMG
 
 func _on_attack_area_body_exited(body: Node2D) -> void:
-	in_battle = false
+	if body.name == "Player":
+		in_battle = false

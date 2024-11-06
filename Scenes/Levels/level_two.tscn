@@ -1292,7 +1292,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	text = \"HP: \" + str(get_node(\"../../Player/Player\").health) + '\\n' + \"Gold: \" + str(get_node(\"../../Player/Player\").gold)
 "
 
@@ -1377,6 +1377,9 @@ position = Vector2(3026, 241)
 
 [node name="mushroom" parent="Mobs" instance=ExtResource("5_25c0r")]
 position = Vector2(520, 320)
+
+[node name="mushroom2" parent="Mobs" instance=ExtResource("5_25c0r")]
+position = Vector2(5064, 336)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("5_76j6v")
