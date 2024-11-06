@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var health = Game.playerHP
 var gold = Game.gold
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -300.0
 
 var speed = 150.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -22,7 +22,7 @@ var is_hurt = false
 
 
 func _process(_delta):
-	return
+	gold = Game.gold
 
 func _physics_process(delta: float):
 	# Add the gravity.

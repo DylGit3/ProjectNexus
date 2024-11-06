@@ -9,13 +9,14 @@ var SPEED = 125.0
 var is_attacking = false
 
 func _physics_process(delta: float):
-	if health == 0:
+	if health <= 0 and health >= -99:
+		health = -100
+		Game.gold += 1
 		$AnimationPlayer.play("death")
 		get_node("body").disabled = true
 		get_node("PlayerDetection").monitoring = false
 		get_node("attackarea").monitoring = false
 		await get_node("AnimationPlayer").animation_finished
-		health = -1
 		$hurtbox/hurtbox.disabled = true
 	elif health > 0:
 		velocity.y += gravity * delta
