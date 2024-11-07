@@ -163,44 +163,31 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_ckonq"]
-resource_name = "fly"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_fa6lh"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"fly"]
+"values": [1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/path = NodePath("hurtArea/hurtCollision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667, 0.8, 0.933333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("hurtArea/hurtCollision:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_1i5ue"]
@@ -270,31 +257,44 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_fa6lh"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_ckonq"]
+resource_name = "fly"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [&"fly"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("hurtArea/hurtCollision:disabled")
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667, 0.8, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hurtArea/hurtCollision:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_womhv"]
@@ -324,7 +324,7 @@ size = Vector2(4, 21)
 radius = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2op2v"]
-size = Vector2(4, 8)
+size = Vector2(4, 7)
 
 [node name="flyingEye" type="CharacterBody2D"]
 script = ExtResource("1_o566c")
@@ -348,7 +348,7 @@ position = Vector2(-7.62939e-06, -4.99999)
 position = Vector2(0, -32)
 shape = SubResource("CircleShape2D_rwwf8")
 
-[node name="hurtArea" type="Area2D" parent="."]
+[node name="hurtArea" type="Area2D" parent="." groups=["eyeDamage"]]
 position = Vector2(-7.62939e-06, -4.99999)
 
 [node name="hurtCollision" type="CollisionShape2D" parent="hurtArea"]
@@ -378,7 +378,7 @@ position = Vector2(-7.62939e-06, -37)
 shape = SubResource("CircleShape2D_05o7u")
 
 [node name="deathLevitate" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17)
+position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_2op2v")
 disabled = true
 

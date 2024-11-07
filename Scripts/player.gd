@@ -133,7 +133,6 @@ func stand_from_crouch():
 	$Area2D/bodycollision.position.x = 0
 	$Area2D/bodycollision.position.y = 0
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if not is_hurt:
 		if area.is_in_group("skeletonDamage"):
@@ -141,4 +140,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			is_hurt = true
 		if area.is_in_group("mushroomDamage"):
 			health -= Game.mushroomDMG
+			is_hurt = true
+		if area.is_in_group("eyeDamage"):
+			health -= Game.eyeDMG
 			is_hurt = true

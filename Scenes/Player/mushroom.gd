@@ -20,6 +20,7 @@ func _physics_process(delta: float):
 		get_node("attackArea").monitoring = false
 		await get_node("AnimationPlayer").animation_finished
 		get_node("collisionDamage").disabled = true
+		get_node("attackBoxArea/attackBox").disabled = true
 	elif health > 0:
 		if is_attacking == false:
 			if chase:

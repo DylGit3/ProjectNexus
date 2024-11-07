@@ -1381,6 +1381,12 @@ position = Vector2(520, 320)
 [node name="mushroom2" parent="Mobs" instance=ExtResource("5_25c0r")]
 position = Vector2(5064, 336)
 
+[node name="Skeleton10" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(4448, 136)
+
+[node name="Skeleton11" parent="Mobs" instance=ExtResource("5_oq6nl")]
+position = Vector2(4704, 264)
+
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("5_76j6v")
 
