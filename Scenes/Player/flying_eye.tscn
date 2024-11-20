@@ -318,7 +318,7 @@ radius = 25.02
 radius = 16.0312
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gajna"]
-size = Vector2(4, 21)
+size = Vector2(18, 21)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_05o7u"]
 radius = 16.0
@@ -371,7 +371,7 @@ shape = SubResource("CircleShape2D_eiecu")
 [node name="levitate" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_gajna")
-one_way_collision = true
+one_way_collision_margin = 0.0
 
 [node name="realBody" type="CollisionShape2D" parent="."]
 position = Vector2(-7.62939e-06, -37)

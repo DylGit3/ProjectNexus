@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://cuv1rs2r2l7hh"]
+[gd_scene load_steps=15 format=4 uid="uid://cuv1rs2r2l7hh"]
 
 [ext_resource type="PackedScene" uid="uid://dd4wg4onyrmqy" path="res://Scenes/Player/Player.tscn" id="1_e08lh"]
+[ext_resource type="Script" path="res://Scenes/Levels/level_two.gd" id="1_wuv0b"]
 [ext_resource type="PackedScene" uid="uid://pmcdemxkor8q" path="res://Scenes/Menu/pause_menu.tscn" id="3_t2637"]
 [ext_resource type="Texture2D" uid="uid://bv56g18xsh6qb" path="res://Assets/Lvl 1 enviorment/mainlev_build.png" id="4_pq6rn"]
 [ext_resource type="PackedScene" uid="uid://t150qvmea0cr" path="res://Scenes/Player/mushroom.tscn" id="5_25c0r"]
 [ext_resource type="Script" path="res://Scenes/Levels/area_2d_next_lvl.gd" id="5_76j6v"]
 [ext_resource type="PackedScene" uid="uid://8xc8idfu6ol3" path="res://Scenes/Player/skeleton.tscn" id="5_oq6nl"]
+[ext_resource type="PackedScene" uid="uid://vmc2wuyel3m8" path="res://Scenes/Menu/death_menu.tscn" id="7_7ur8r"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r6h07"]
 load_path = "res://.godot/imported/cave_back.png-b60f7aa3848c6e8a66884a2615512e09.ctex"
@@ -1300,6 +1302,7 @@ func _process(_delta: float) -> void:
 radius = 38.0132
 
 [node name="LevelTwo" type="Node2D"]
+script = ExtResource("1_wuv0b")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1393,6 +1396,11 @@ script = ExtResource("5_76j6v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(5242, 133)
 shape = SubResource("CircleShape2D_frc0q")
+
+[node name="canvaslayer2" type="CanvasLayer" parent="."]
+
+[node name="death_menu" parent="canvaslayer2" instance=ExtResource("7_7ur8r")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

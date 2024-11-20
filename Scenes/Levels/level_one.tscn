@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://kudjbebxpiyn"]
+[gd_scene load_steps=16 format=4 uid="uid://kudjbebxpiyn"]
 
 [ext_resource type="Texture2D" uid="uid://beqbhev0halep" path="res://Assets/Lvl 2 enviorment/all/purple_L1.png" id="1_aq4xq"]
 [ext_resource type="PackedScene" uid="uid://dd4wg4onyrmqy" path="res://Scenes/Player/Player.tscn" id="1_nnm0t"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://hs5ge053rbv1" path="res://Assets/Lvl 2 enviorment/Dungeon Tile Set.png" id="5_hfqmw"]
 [ext_resource type="Texture2D" uid="uid://cj6d5trs7882d" path="res://Assets/Lvl 2 enviorment/Assets.png" id="6_8dtkt"]
 [ext_resource type="PackedScene" uid="uid://5vejgs5r3qtu" path="res://Scenes/Player/flying_eye.tscn" id="8_h04dl"]
+[ext_resource type="PackedScene" uid="uid://vmc2wuyel3m8" path="res://Scenes/Menu/death_menu.tscn" id="10_mclck"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlls2"]
 texture = ExtResource("3_mhg4s")
@@ -1675,4 +1676,9 @@ position = Vector2(2664, 288)
 position = Vector2(3040, 328)
 
 [node name="flyingEye" parent="Mobs" instance=ExtResource("8_h04dl")]
-position = Vector2(567, 334)
+position = Vector2(568, 334)
+
+[node name="DeathCanvas" type="CanvasLayer" parent="."]
+
+[node name="death_menu" parent="DeathCanvas" instance=ExtResource("10_mclck")]
+visible = false
