@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://dd4wg4onyrmqy"]
+[gd_scene load_steps=82 format=3 uid="uid://dd4wg4onyrmqy"]
 
 [ext_resource type="Texture2D" uid="uid://bvu2ryb66coqi" path="res://Assets/Charecter stuff/_Hit.png" id="1_6loyd"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bmdyc"]
@@ -12,8 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cpw7a387ifnvo" path="res://Assets/Charecter stuff/_Attack2.png" id="4_4g3mr"]
 [ext_resource type="Texture2D" uid="uid://bb2d0o7b2in3" path="res://Assets/Charecter stuff/_Run.png" id="4_w2x8r"]
 [ext_resource type="Texture2D" uid="uid://banfvjb0jgc2k" path="res://Assets/Charecter stuff/_Death.png" id="7_jy0rt"]
-[ext_resource type="AudioStream" uid="uid://che1it0s4ixc7" path="res://Assets/Audio/PlayerAttack.mp3" id="13_pqu1y"]
-[ext_resource type="AudioStream" uid="uid://oedftog716g4" path="res://Assets/Audio/PlayerStep.wav" id="14_7b20o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8wlp"]
 atlas = ExtResource("3_5s3nb")
@@ -862,11 +860,5 @@ scale = Vector2(0.715, 0.715)
 [node name="bodycollision" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.011, 0.031)
 shape = SubResource("CapsuleShape2D_n104n")
-
-[node name="SwordSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_pqu1y")
-
-[node name="StepSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_7b20o")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

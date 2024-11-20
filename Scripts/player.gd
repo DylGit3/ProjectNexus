@@ -20,20 +20,19 @@ var attack_first_blocked = false
 
 var is_hurt = false
 
+
 func _process(_delta):
 	gold = Game.gold
-	#if is_attacking == false and is_on_floor() and velocity.x > 0 and $StepSound.playing == false:
-			#$StepSound.play()
 
 func _physics_process(delta: float):
 	# Add the gravity.
 	if health <= 0:
 		$AnimationPlayer.play("Death")
 		await get_tree().create_timer(4).timeout
-		self.queue_free()
 	else:
 		if not is_on_floor():
 			velocity.y += gravity * delta
+		
 		
 		var direction = Input.get_axis("move_left", "move_right")
 		if direction == 1:
@@ -48,7 +47,6 @@ func _physics_process(delta: float):
 			get_node("hitbox1").position.x = 0
 
 		if Input.is_action_just_pressed("attackFirst") and is_attacking == false:
-			$SwordSound.play()
 			$AnimationPlayer.play("AttackFirst")
 			is_attacking = true
 			velocity.x *= .33

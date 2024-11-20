@@ -17,7 +17,6 @@ func _physics_process(delta: float):
 		get_node("body").disabled = true
 		get_node("PlayerDetection").monitoring = false
 		get_node("attackArea").monitoring = false
-		$DeathSound.play()
 		await get_node("AnimationPlayer").animation_finished
 		$hurtbox/hurtbox.disabled = true
 	elif health > 0:
@@ -66,7 +65,6 @@ func _on_attackarea_body_entered(body: Node2D):
 		in_battle = true
 		while in_battle:
 			velocity.x = 0
-			$AttackSound.play()
 			$AnimationPlayer.play("attack")
 			if looking == -1:
 				get_node("AnimatedSprite2D").offset.x -= 17
