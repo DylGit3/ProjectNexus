@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://kudjbebxpiyn"]
+[gd_scene load_steps=17 format=4 uid="uid://kudjbebxpiyn"]
 
 [ext_resource type="Texture2D" uid="uid://beqbhev0halep" path="res://Assets/Lvl 2 enviorment/all/purple_L1.png" id="1_aq4xq"]
 [ext_resource type="PackedScene" uid="uid://dd4wg4onyrmqy" path="res://Scenes/Player/Player.tscn" id="1_nnm0t"]
+[ext_resource type="Script" path="res://Scenes/Levels/level_one.gd" id="1_yea44"]
 [ext_resource type="Texture2D" uid="uid://dwo7rfhbhgys4" path="res://Assets/Lvl 2 enviorment/all/red_L2.png" id="2_gjx6q"]
 [ext_resource type="PackedScene" uid="uid://pmcdemxkor8q" path="res://Scenes/Menu/pause_menu.tscn" id="2_y30sb"]
 [ext_resource type="Texture2D" uid="uid://bv56g18xsh6qb" path="res://Assets/Lvl 1 enviorment/mainlev_build.png" id="3_mhg4s"]
@@ -1600,6 +1601,7 @@ func _process(delta: float) -> void:
 "
 
 [node name="LevelOne" type="Node2D"]
+script = ExtResource("1_yea44")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1644,15 +1646,15 @@ script = SubResource("GDScript_rhbg1")
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("1_nnm0t")]
-position = Vector2(5053, 289)
+position = Vector2(104, 257)
 
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Skeleton" parent="Mobs" instance=ExtResource("5_do8j8")]
-position = Vector2(1038, 239)
+position = Vector2(1183, 255)
 
 [node name="Skeleton2" parent="Mobs" instance=ExtResource("5_do8j8")]
-position = Vector2(1271, 241)
+position = Vector2(1213, 255)
 
 [node name="Skeleton3" parent="Mobs" instance=ExtResource("5_do8j8")]
 position = Vector2(1664, 336)
@@ -1661,7 +1663,7 @@ position = Vector2(1664, 336)
 position = Vector2(3432, 320)
 
 [node name="Skeleton5" parent="Mobs" instance=ExtResource("5_do8j8")]
-position = Vector2(1433, 318)
+position = Vector2(1489, 334)
 
 [node name="Skeleton6" parent="Mobs" instance=ExtResource("5_do8j8")]
 position = Vector2(2136, 320)
