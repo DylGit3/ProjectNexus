@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dd4wg4onyrmqy"]
+[gd_scene load_steps=82 format=3 uid="uid://dd4wg4onyrmqy"]
 
 [ext_resource type="Texture2D" uid="uid://bvu2ryb66coqi" path="res://Assets/Charecter stuff/_Hit.png" id="1_6loyd"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bmdyc"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c133ikfvi0630" path="res://Assets/Charecter stuff/_CrouchWalk.png" id="3_skpyv"]
 [ext_resource type="Texture2D" uid="uid://cpw7a387ifnvo" path="res://Assets/Charecter stuff/_Attack2.png" id="4_4g3mr"]
 [ext_resource type="Texture2D" uid="uid://bb2d0o7b2in3" path="res://Assets/Charecter stuff/_Run.png" id="4_w2x8r"]
+[ext_resource type="Texture2D" uid="uid://banfvjb0jgc2k" path="res://Assets/Charecter stuff/_Death.png" id="7_jy0rt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8wlp"]
 atlas = ExtResource("3_5s3nb")
@@ -83,6 +84,46 @@ region = Rect2(720, 0, 120, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_avv1d"]
 atlas = ExtResource("3_skpyv")
 region = Rect2(840, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t28qb"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4jeu"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7vkq"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(240, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0em0a"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(360, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10edk"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(480, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt37a"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(600, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1dkh"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(720, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xd4m"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(840, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8tod"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(960, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4iat"]
+atlas = ExtResource("7_jy0rt")
+region = Rect2(1080, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x16my"]
 atlas = ExtResource("2_nvcu3")
@@ -265,6 +306,41 @@ animations = [{
 }],
 "loop": true,
 "name": &"Crouch_Walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t28qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4jeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7vkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0em0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10edk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt37a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1dkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xd4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8tod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4iat")
+}],
+"loop": true,
+"name": &"Death",
 "speed": 5.0
 }, {
 "frames": [{
@@ -500,6 +576,34 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_jx4dr"]
+resource_name = "Death"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.266667, 0.433333, 0.6, 0.766667, 0.933333, 1.1, 1.2, 1.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
 [sub_resource type="Animation" id="Animation_amd3k"]
 resource_name = "Fall"
 length = 0.3
@@ -699,6 +803,7 @@ _data = {
 "AttackSecond": SubResource("Animation_72giy"),
 "Crouch": SubResource("Animation_brkj3"),
 "Crouch_Walk": SubResource("Animation_p4eoa"),
+"Death": SubResource("Animation_jx4dr"),
 "Fall": SubResource("Animation_amd3k"),
 "Hurt": SubResource("Animation_aef5a"),
 "Idle": SubResource("Animation_5rkqj"),
