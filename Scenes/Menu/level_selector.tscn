@@ -126,6 +126,7 @@ text = "Level Two"
 label_settings = SubResource("LabelSettings_gmjws")
 
 [node name="LevelThreePanel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 881.0
 offset_top = 256.0
 offset_right = 996.0
@@ -142,6 +143,7 @@ text = "Level Three"
 label_settings = SubResource("LabelSettings_vg1ld")
 
 [node name="LevelOnePanel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 171.0
 offset_top = 257.0
 offset_right = 286.0

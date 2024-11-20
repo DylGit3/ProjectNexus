@@ -69,11 +69,11 @@ func _on_attackarea_body_entered(body: Node2D):
 			$AttackSound.play()
 			$AnimationPlayer.play("attack")
 			if looking == -1:
-				get_node("AnimatedSprite2D").offset.x -= 17
+				get_node("AnimatedSprite2D").offset.x = -15
 			is_attacking = true
 			await get_node("AnimationPlayer").animation_finished
 			if looking == -1:
-				get_node("AnimatedSprite2D").offset.x += 17
+				get_node("AnimatedSprite2D").offset.x = 0
 			is_attacking = false
 
 
