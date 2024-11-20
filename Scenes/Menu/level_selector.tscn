@@ -26,9 +26,9 @@ grow_vertical = 2
 
 [node name="LevelOneButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 296.0
+offset_left = 496.0
 offset_top = 344.0
-offset_right = 600.0
+offset_right = 800.0
 offset_bottom = 512.0
 icon = SubResource("CompressedTexture2D_ocg04")
 
@@ -47,27 +47,19 @@ text = "Level One"
 
 [node name="LevelTwo" type="Label" parent="."]
 layout_mode = 0
-offset_left = 408.0
-offset_top = 519.0
-offset_right = 485.0
-offset_bottom = 548.0
+offset_left = 616.0
+offset_top = 512.0
+offset_right = 693.0
+offset_bottom = 541.0
 text = "Level Two"
 
 [node name="LevelThree" type="Label" parent="."]
 layout_mode = 0
-offset_left = 687.0
-offset_top = 249.0
-offset_right = 776.0
-offset_bottom = 285.0
+offset_left = 896.0
+offset_top = 256.0
+offset_right = 985.0
+offset_bottom = 292.0
 text = "Level Three"
-
-[node name="LevelFour" type="Label" parent="."]
-layout_mode = 0
-offset_left = 888.0
-offset_top = 494.0
-offset_right = 968.0
-offset_bottom = 517.0
-text = "Level Four"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
@@ -100,6 +92,13 @@ scale = Vector2(0.506667, 0.44)
 texture = ExtResource("3_xo2sh")
 
 [node name="BG" parent="." instance=ExtResource("4_6msv6")]
+
+[node name="LevelThreeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 88.0
+offset_right = 1088.0
+offset_bottom = 256.0
 
 [connection signal="pressed" from="LevelOneButton" to="." method="_on_level_one_button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_button_pressed"]

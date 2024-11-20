@@ -35,4 +35,6 @@ func _on_restart_pressed() -> void:
 	
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	resume()
+	MenuMusic.play_music_menu()
+	get_tree().change_scene_to_file("res://Scenes/Menu/level_selector.tscn")
