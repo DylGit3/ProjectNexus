@@ -1,10 +1,12 @@
-[gd_scene load_steps=74 format=3 uid="uid://8xc8idfu6ol3"]
+[gd_scene load_steps=76 format=3 uid="uid://8xc8idfu6ol3"]
 
 [ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_3gy7u"]
 [ext_resource type="Texture2D" uid="uid://pdb6a166w5mw" path="res://Assets/Skeleton stuff/Skeleton Idle.png" id="1_oqowy"]
 [ext_resource type="Texture2D" uid="uid://fp1roskpit3b" path="res://Assets/Skeleton stuff/Skeleton Attack.png" id="1_xe3is"]
 [ext_resource type="Texture2D" uid="uid://cb35jqju1876" path="res://Assets/Skeleton stuff/Skeleton Dead.png" id="2_mr3wx"]
 [ext_resource type="Texture2D" uid="uid://cd66fr2c0t04u" path="res://Assets/Skeleton stuff/Skeleton Walk.png" id="4_jguoy"]
+[ext_resource type="AudioStream" uid="uid://bhjtjf5qy3777" path="res://Assets/Audio/SkelAttack.mp3" id="6_ww6cn"]
+[ext_resource type="AudioStream" uid="uid://loh8gdn0vetm" path="res://Assets/Audio/SkelDeath.mp3" id="7_mowna"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rp2et"]
 atlas = ExtResource("1_xe3is")
@@ -749,6 +751,12 @@ shape = SubResource("RectangleShape2D_5ofgx")
 [node name="body" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -11)
 shape = SubResource("RectangleShape2D_5ofgx")
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ww6cn")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_mowna")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
