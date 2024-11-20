@@ -1,10 +1,12 @@
-[gd_scene load_steps=41 format=3 uid="uid://t150qvmea0cr"]
+[gd_scene load_steps=43 format=3 uid="uid://t150qvmea0cr"]
 
 [ext_resource type="Script" path="res://Scenes/Player/mushroom.gd" id="1_8k44i"]
 [ext_resource type="Texture2D" uid="uid://bwnxg0opkv6y1" path="res://Assets/mushroom stuff/Attack2.png" id="2_uc0dg"]
 [ext_resource type="Texture2D" uid="uid://dv6obrs53lue0" path="res://Assets/mushroom stuff/Death.png" id="3_oytsy"]
 [ext_resource type="Texture2D" uid="uid://bqo0yerp3potc" path="res://Assets/mushroom stuff/Idle.png" id="4_ykjb4"]
 [ext_resource type="Texture2D" uid="uid://cy3ite8g03oob" path="res://Assets/mushroom stuff/Run.png" id="5_rdprm"]
+[ext_resource type="AudioStream" uid="uid://b46qma4ndnbqr" path="res://Assets/Audio/MushAttack.mp3" id="6_xx6r2"]
+[ext_resource type="AudioStream" uid="uid://cun8qeumubd55" path="res://Assets/Audio/MushDeath.mp3" id="7_n2oqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6p5ts"]
 atlas = ExtResource("2_uc0dg")
@@ -229,7 +231,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ly4pw"]
 resource_name = "attack"
-length = 1.5
+length = 1.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -249,10 +251,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.366667, 0.6, 0.766667, 0.933333, 1.13333, 1.3),
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.466667, 0.666667, 0.833333, 1, 1.16667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 5, 7]
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -261,7 +263,7 @@ tracks/2/path = NodePath("attackBoxArea/attackBox:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.13333, 1.5),
+"times": PackedFloat32Array(0, 0.766667, 1.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -388,7 +390,7 @@ script = ExtResource("1_8k44i")
 position = Vector2(0, -28)
 scale = Vector2(1, 1.05333)
 sprite_frames = SubResource("SpriteFrames_jxl6n")
-animation = &"idle"
+animation = &"attack"
 frame = 1
 
 [node name="PlayerDetection" type="Area2D" parent="."]
@@ -423,6 +425,12 @@ shape = SubResource("RectangleShape2D_qjp2h")
 [node name="body" type="CollisionShape2D" parent="areabody"]
 position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_3tfod")
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_xx6r2")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_n2oqr")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

@@ -18,6 +18,7 @@ func _physics_process(delta: float):
 		get_node("areabody/body").disabled = true
 		get_node("PlayerDetection").monitoring = false
 		get_node("attackArea").monitoring = false
+		$DeathSound.play()
 		await get_node("AnimationPlayer").animation_finished
 		get_node("collisionDamage").disabled = true
 		get_node("attackBoxArea/attackBox").disabled = true
@@ -55,6 +56,7 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 		in_battle = true
 		while in_battle:
 			velocity.x = 0
+			$AttackSound.play()
 			$AnimationPlayer.play("attack")
 			is_attacking = true
 			await get_node("AnimationPlayer").animation_finished

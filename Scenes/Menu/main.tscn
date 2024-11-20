@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccmbm872r1oyv" path="res://Scenes/Menu/menu_background.tscn" id="2_ak6k4"]
 [ext_resource type="Theme" uid="uid://bh0rkdt7ttugo" path="res://Resources/main_label.tres" id="2_us0wn"]
 [ext_resource type="Texture2D" uid="uid://d7nj8hkduppa" path="res://Assets/Unsorted/GUI.png" id="3_snbaa"]
-[ext_resource type="AudioStream" uid="uid://cxmjtxyfk1y0w" path="res://Assets/Audio/Retro1.ogg" id="5_nct2j"]
+[ext_resource type="AudioStream" uid="uid://o3xr40pkiofe" path="res://Assets/Audio/Click.mp3" id="5_fpecn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6v35u"]
 atlas = ExtResource("3_snbaa")
@@ -77,8 +77,8 @@ offset_bottom = 22.0
 size_flags_vertical = 3
 
 [node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_nct2j")
-volume_db = 3.53
+stream = ExtResource("5_fpecn")
+volume_db = 3.0
 
 [connection signal="pressed" from="Sprite2D/play" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Sprite2D/options" to="." method="_on_options_pressed"]
