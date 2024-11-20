@@ -7,3 +7,7 @@ var playerDMG = 1
 var skeletonDMG = 1
 var mushroomDMG = 2
 var eyeDMG = 1
+
+# keeps track of levels completed
+var levelOneComplete = false
+var levelTwoComplete = false

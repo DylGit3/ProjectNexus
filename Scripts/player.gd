@@ -30,7 +30,6 @@ func _physics_process(delta: float):
 	if health <= 0:
 		$AnimationPlayer.play("Death")
 		await get_tree().create_timer(4).timeout
-		self.queue_free()
 	else:
 		if not is_on_floor():
 			velocity.y += gravity * delta
@@ -142,10 +141,13 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if not is_hurt:
 		if area.is_in_group("skeletonDamage"):
 			health -= Game.skeletonDMG
+			$HurtSound.play()
 			is_hurt = true
 		if area.is_in_group("mushroomDamage"):
 			health -= Game.mushroomDMG
+			$HurtSound.play()
 			is_hurt = true
 		if area.is_in_group("eyeDamage"):
 			health -= Game.eyeDMG
+			$HurtSound.play()
 			is_hurt = true

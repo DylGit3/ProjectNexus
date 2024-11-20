@@ -1,9 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://5vejgs5r3qtu"]
+[gd_scene load_steps=40 format=3 uid="uid://5vejgs5r3qtu"]
 
 [ext_resource type="Script" path="res://Scenes/Player/flying_eye.gd" id="1_o566c"]
 [ext_resource type="Texture2D" uid="uid://cugv2r38d3dg3" path="res://Assets/flyingEye/Attack2.png" id="2_gdgfk"]
 [ext_resource type="Texture2D" uid="uid://be5o2b4jtp2ye" path="res://Assets/flyingEye/Death.png" id="2_gixv3"]
 [ext_resource type="Texture2D" uid="uid://cqmpap14cokek" path="res://Assets/flyingEye/Flight.png" id="3_06efi"]
+[ext_resource type="AudioStream" uid="uid://dl2gh1pb3d3c4" path="res://Assets/Audio/eyeDeath.mp3" id="5_7lcry"]
+[ext_resource type="AudioStream" uid="uid://cwbg8tt7knvht" path="res://Assets/Audio/EyeAttack.mp3" id="6_bh574"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_die8a"]
 atlas = ExtResource("2_gdgfk")
@@ -381,6 +383,12 @@ shape = SubResource("CircleShape2D_05o7u")
 position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_2op2v")
 disabled = true
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7lcry")
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bh574")
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]

@@ -23,6 +23,7 @@ buses/default_bus_layout="res://Assets/Audio/default_bus_layout.tres"
 MenuMusic="*res://Scenes/Menu/menu_music.tscn"
 Game="*res://Scripts/GlobalScript/Game.gd"
 Utility="*res://Scripts/GlobalScript/Utility.gd"
+LevelSelector="*res://Scripts/level_selector.gd"
 
 [display]
 

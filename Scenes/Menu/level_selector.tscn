@@ -1,12 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://b635khl868dyg"]
+[gd_scene load_steps=14 format=3 uid="uid://b635khl868dyg"]
 
 [ext_resource type="Script" path="res://Scripts/level_selector.gd" id="1_nuhg6"]
 [ext_resource type="Texture2D" uid="uid://bbvrxvek8pyc" path="res://Assets/Pictures/lava_lake_test.svg" id="2_nxho8"]
 [ext_resource type="Texture2D" uid="uid://bd4gh2gssj10n" path="res://Assets/Pictures/cavePicForLevelSelect.png" id="3_xo2sh"]
 [ext_resource type="PackedScene" uid="uid://ccmbm872r1oyv" path="res://Scenes/Menu/menu_background.tscn" id="4_6msv6"]
 [ext_resource type="Texture2D" uid="uid://cickk3yu5bxch" path="res://Assets/Unsorted/palce.png" id="5_qh6o0"]
+[ext_resource type="AudioStream" uid="uid://o3xr40pkiofe" path="res://Assets/Audio/Click.mp3" id="6_vffjb"]
+[ext_resource type="Texture2D" uid="uid://d7nj8hkduppa" path="res://Assets/Unsorted/GUI.png" id="7_b6q8p"]
+[ext_resource type="Theme" uid="uid://bmr40juj7gfgd" path="res://Resources/button_default.tres" id="7_ro4l3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ocg04"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykf52"]
+texture = ExtResource("7_b6q8p")
+region_rect = Rect2(145, 65, 46, 14)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gmjws"]
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vg1ld"]
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ll22i"]
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Level Selector" type="Control"]
 layout_mode = 3
@@ -25,50 +44,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LevelOneButton" type="Button" parent="."]
+[node name="LevelTwoButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 424.0
 offset_top = 344.0
 offset_right = 728.0
 offset_bottom = 512.0
+disabled = true
 icon = SubResource("CompressedTexture2D_ocg04")
 
-[node name="LavaPic" type="Sprite2D" parent="LevelOneButton"]
+[node name="LavaPic" type="Sprite2D" parent="LevelTwoButton"]
 position = Vector2(152, 84)
 scale = Vector2(0.968153, 0.933333)
 texture = ExtResource("2_nxho8")
-
-[node name="LevelOne" type="Label" parent="."]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 256.0
-offset_right = 282.0
-offset_bottom = 293.0
-text = "Level One"
-
-[node name="LevelTwo" type="Label" parent="."]
-layout_mode = 0
-offset_left = 544.0
-offset_top = 512.0
-offset_right = 621.0
-offset_bottom = 541.0
-text = "Level Two"
-
-[node name="LevelThree" type="Label" parent="."]
-layout_mode = 0
-offset_left = 896.0
-offset_top = 256.0
-offset_right = 985.0
-offset_bottom = 292.0
-text = "Level Three"
-
-[node name="Back" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1036.0
-offset_top = 590.0
-offset_right = 1099.0
-offset_bottom = 621.0
-text = "Back"
 
 [node name="SecretLevel" type="Label" parent="."]
 visible = false
@@ -79,7 +67,7 @@ offset_right = 1127.0
 offset_bottom = 51.0
 text = "Secret Level"
 
-[node name="LevelTwoButton" type="Button" parent="."]
+[node name="LevelOneButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 80.0
 offset_top = 80.0
@@ -87,7 +75,7 @@ offset_right = 384.0
 offset_bottom = 256.0
 icon = SubResource("CompressedTexture2D_ocg04")
 
-[node name="CavePic" type="Sprite2D" parent="LevelTwoButton"]
+[node name="CavePic" type="Sprite2D" parent="LevelOneButton"]
 position = Vector2(152, 88)
 scale = Vector2(0.506667, 0.44)
 texture = ExtResource("3_xo2sh")
@@ -100,13 +88,76 @@ offset_left = 784.0
 offset_top = 88.0
 offset_right = 1088.0
 offset_bottom = 256.0
+disabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelThreeButton"]
+[node name="forestPic" type="Sprite2D" parent="LevelThreeButton"]
 position = Vector2(152, 84)
 scale = Vector2(0.158333, 0.155556)
 texture = ExtResource("5_qh6o0")
 
-[connection signal="pressed" from="LevelOneButton" to="." method="_on_level_one_button_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="LevelTwoButton" to="." method="_on_level_two_button_pressed"]
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_vffjb")
+volume_db = 1.0
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 580.0
+offset_right = 1069.0
+offset_bottom = 610.0
+theme = ExtResource("7_ro4l3")
+text = "Back"
+
+[node name="LevelTwoPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 513.0
+offset_right = 634.0
+offset_bottom = 543.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ykf52")
+
+[node name="LevelTwo" type="Label" parent="LevelTwoPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 4.0
+offset_right = 98.0
+offset_bottom = 33.0
+text = "Level Two"
+label_settings = SubResource("LabelSettings_gmjws")
+
+[node name="LevelThreePanel" type="Panel" parent="."]
+offset_left = 881.0
+offset_top = 256.0
+offset_right = 996.0
+offset_bottom = 286.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ykf52")
+
+[node name="LevelThree" type="Label" parent="LevelThreePanel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 101.0
+offset_bottom = 40.0
+text = "Level Three"
+label_settings = SubResource("LabelSettings_vg1ld")
+
+[node name="LevelOnePanel" type="Panel" parent="."]
+offset_left = 171.0
+offset_top = 257.0
+offset_right = 286.0
+offset_bottom = 287.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ykf52")
+
+[node name="LevelOne" type="Label" parent="LevelOnePanel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 3.0
+offset_right = 98.0
+offset_bottom = 26.0
+text = "Level One"
+label_settings = SubResource("LabelSettings_ll22i")
+
+[connection signal="pressed" from="LevelTwoButton" to="." method="_on_level_one_button_pressed"]
+[connection signal="pressed" from="LevelOneButton" to="." method="_on_level_two_button_pressed"]
 [connection signal="pressed" from="LevelThreeButton" to="." method="_on_level_three_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

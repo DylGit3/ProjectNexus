@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://36ku13axo8lh"]
+[gd_scene load_steps=9 format=3 uid="uid://36ku13axo8lh"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_dl0la"]
 [ext_resource type="PackedScene" uid="uid://ccmbm872r1oyv" path="res://Scenes/Menu/menu_background.tscn" id="2_ak6k4"]
@@ -9,6 +9,14 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_6v35u"]
 atlas = ExtResource("3_snbaa")
 region = Rect2(8, 190, 48, 68.82)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4344p"]
+texture = ExtResource("3_snbaa")
+region_rect = Rect2(122, 50, 7, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ncxu0"]
+font_size = 40
+font_color = Color(1, 1, 0.301961, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -80,6 +88,23 @@ size_flags_vertical = 3
 stream = ExtResource("5_fpecn")
 volume_db = 3.0
 
+[node name="GoldSymbol" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 36.0
+offset_right = 958.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4344p")
+
+[node name="GoldCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 32.0
+offset_right = 1060.0
+offset_bottom = 87.0
+label_settings = SubResource("LabelSettings_ncxu0")
+
 [connection signal="pressed" from="Sprite2D/play" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Sprite2D/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Sprite2D/quit" to="." method="_on_Quit_pressed"]
+[connection signal="ready" from="GoldCount" to="." method="_on_gold_count_ready"]
