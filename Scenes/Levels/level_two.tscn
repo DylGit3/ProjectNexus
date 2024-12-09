@@ -1435,7 +1435,7 @@ func _process(_delta: float) -> void:
 radius = 38.0132
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5jcv"]
-size = Vector2(462, 109)
+size = Vector2(323, 109)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2cmf"]
 size = Vector2(95.75, 53)
@@ -1466,6 +1466,7 @@ scale = Vector2(1.225, 0.979165)
 texture = SubResource("CompressedTexture2D_erm1o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_t2637")]
 visible = false
@@ -1489,10 +1490,9 @@ theme_override_font_sizes/font_size = 24
 script = SubResource("GDScript_rhbg1")
 
 [node name="Player" type="Node2D" parent="."]
-visible = false
 
 [node name="Player" parent="Player" instance=ExtResource("1_e08lh")]
-position = Vector2(1856, 328)
+position = Vector2(103, 243)
 
 [node name="Mobs" type="Node2D" parent="."]
 visible = false
@@ -1552,7 +1552,7 @@ visible = false
 script = ExtResource("10_0ef56")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileDeaths"]
-position = Vector2(2903, 420)
+position = Vector2(2574, 419)
 shape = SubResource("RectangleShape2D_y5jcv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileDeaths"]
