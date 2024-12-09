@@ -1,15 +1,15 @@
-[gd_scene load_steps=19 format=4 uid="uid://cuv1rs2r2l7hh"]
+[gd_scene load_steps=21 format=4 uid="uid://bfgpi15d8sf2y"]
 
-[ext_resource type="PackedScene" uid="uid://dd4wg4onyrmqy" path="res://Scenes/Player/Player.tscn" id="1_e08lh"]
-[ext_resource type="Script" path="res://Scenes/Levels/level_two.gd" id="1_wuv0b"]
-[ext_resource type="PackedScene" uid="uid://pmcdemxkor8q" path="res://Scenes/Menu/pause_menu.tscn" id="3_t2637"]
-[ext_resource type="Texture2D" uid="uid://dlqme5h2erpml" path="res://Assets/Lvl 1 enviorment/Environment ( With Animations )/Burning Lava/spritesheet-burninglava.png" id="4_bvfcw"]
-[ext_resource type="Texture2D" uid="uid://bv56g18xsh6qb" path="res://Assets/Lvl 1 enviorment/mainlev_build.png" id="4_pq6rn"]
-[ext_resource type="PackedScene" uid="uid://t150qvmea0cr" path="res://Scenes/Player/mushroom.tscn" id="5_25c0r"]
-[ext_resource type="Script" path="res://Scenes/Levels/area_2d_next_lvl.gd" id="5_76j6v"]
-[ext_resource type="PackedScene" uid="uid://8xc8idfu6ol3" path="res://Scenes/Player/skeleton.tscn" id="5_oq6nl"]
-[ext_resource type="PackedScene" uid="uid://vmc2wuyel3m8" path="res://Scenes/Menu/death_menu.tscn" id="7_7ur8r"]
-[ext_resource type="Script" path="res://Scenes/Levels/tiledamage.gd" id="10_7oj8t"]
+[ext_resource type="Script" path="res://Scenes/Levels/level_two.gd" id="1_nptq8"]
+[ext_resource type="PackedScene" uid="uid://pmcdemxkor8q" path="res://Scenes/Menu/pause_menu.tscn" id="2_kk0fg"]
+[ext_resource type="Texture2D" uid="uid://bv56g18xsh6qb" path="res://Assets/Lvl 1 enviorment/mainlev_build.png" id="3_07alq"]
+[ext_resource type="Texture2D" uid="uid://dlqme5h2erpml" path="res://Assets/Lvl 1 enviorment/Environment ( With Animations )/Burning Lava/spritesheet-burninglava.png" id="4_wp1jw"]
+[ext_resource type="PackedScene" uid="uid://dd4wg4onyrmqy" path="res://Scenes/Player/Player.tscn" id="5_uwlax"]
+[ext_resource type="PackedScene" uid="uid://8xc8idfu6ol3" path="res://Scenes/Player/skeleton.tscn" id="6_ug7t1"]
+[ext_resource type="PackedScene" uid="uid://t150qvmea0cr" path="res://Scenes/Player/mushroom.tscn" id="7_3ivfe"]
+[ext_resource type="Script" path="res://Scenes/Levels/area_2d_next_lvl.gd" id="8_lhg80"]
+[ext_resource type="PackedScene" uid="uid://vmc2wuyel3m8" path="res://Scenes/Menu/death_menu.tscn" id="9_ra5jn"]
+[ext_resource type="Script" path="res://Scenes/Levels/tile_deaths.gd" id="10_sx4sb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r6h07"]
 load_path = "res://.godot/imported/cave_back.png-b60f7aa3848c6e8a66884a2615512e09.ctex"
@@ -18,7 +18,7 @@ load_path = "res://.godot/imported/cave_back.png-b60f7aa3848c6e8a66884a2615512e0
 load_path = "res://.godot/imported/cave_middle.png-1cbafb2147cf2faa91534cd4bfbd84b4.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlls2"]
-texture = ExtResource("4_pq6rn")
+texture = ExtResource("3_07alq")
 6:1/0 = 0
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:1/0 = 0
@@ -1283,7 +1283,7 @@ texture = ExtResource("4_pq6rn")
 57:34/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kulw4"]
-texture = ExtResource("4_bvfcw")
+texture = ExtResource("4_wp1jw")
 0:0/0 = 0
 1:0/0 = 0
 5:0/0 = 0
@@ -1434,11 +1434,17 @@ func _process(_delta: float) -> void:
 [sub_resource type="CircleShape2D" id="CircleShape2D_frc0q"]
 radius = 38.0132
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e18wc"]
-size = Vector2(81, 13)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5jcv"]
+size = Vector2(323, 109)
 
-[node name="LevelTwo" type="Node2D"]
-script = ExtResource("1_wuv0b")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2cmf"]
+size = Vector2(95.75, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abd50"]
+size = Vector2(81.375, 33)
+
+[node name="levelthree" type="Node2D"]
+script = ExtResource("1_nptq8")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1460,8 +1466,10 @@ scale = Vector2(1.225, 0.979165)
 texture = SubResource("CompressedTexture2D_erm1o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_t2637")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_kk0fg")]
+visible = false
 offset_top = 0.0
 offset_bottom = 0.0
 
@@ -1470,6 +1478,7 @@ tile_map_data = PackedByteArray("AAAAABgAAQApAAIAAAAAABkAAQApAAIAAAAAABoAAQApAAI
 tile_set = SubResource("TileSet_isu61")
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HP" type="Label" parent="UI"]
 offset_left = 56.0
@@ -1482,52 +1491,53 @@ script = SubResource("GDScript_rhbg1")
 
 [node name="Player" type="Node2D" parent="."]
 
-[node name="Player" parent="Player" instance=ExtResource("1_e08lh")]
-position = Vector2(112, 243)
+[node name="Player" parent="Player" instance=ExtResource("5_uwlax")]
+position = Vector2(103, 243)
 
 [node name="Mobs" type="Node2D" parent="."]
+visible = false
 
-[node name="Skeleton" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(1032, 312)
 
-[node name="Skeleton2" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton2" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(1240, 328)
 
-[node name="Skeleton3" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton3" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(1664, 336)
 
-[node name="Skeleton4" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton4" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(3771, 306)
 
-[node name="Skeleton5" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton5" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(1384, 328)
 
-[node name="Skeleton6" parent="Mobs" instance=ExtResource("5_oq6nl")]
-position = Vector2(2474, 324)
+[node name="Skeleton6" parent="Mobs" instance=ExtResource("6_ug7t1")]
+position = Vector2(2136, 320)
 
-[node name="Skeleton7" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton7" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(2664, 328)
 
-[node name="Skeleton8" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton8" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(3486, 316)
 
-[node name="Skeleton9" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton9" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(3026, 241)
 
-[node name="mushroom" parent="Mobs" instance=ExtResource("5_25c0r")]
-position = Vector2(532, 316)
+[node name="mushroom" parent="Mobs" instance=ExtResource("7_3ivfe")]
+position = Vector2(520, 320)
 
-[node name="mushroom2" parent="Mobs" instance=ExtResource("5_25c0r")]
+[node name="mushroom2" parent="Mobs" instance=ExtResource("7_3ivfe")]
 position = Vector2(5080, 336)
 
-[node name="Skeleton10" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton10" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(4448, 136)
 
-[node name="Skeleton11" parent="Mobs" instance=ExtResource("5_oq6nl")]
+[node name="Skeleton11" parent="Mobs" instance=ExtResource("6_ug7t1")]
 position = Vector2(4704, 264)
 
 [node name="FinalArea" type="Area2D" parent="."]
-script = ExtResource("5_76j6v")
+script = ExtResource("8_lhg80")
 
 [node name="FinalCollision" type="CollisionShape2D" parent="FinalArea"]
 position = Vector2(5242, 133)
@@ -1535,16 +1545,24 @@ shape = SubResource("CircleShape2D_frc0q")
 
 [node name="canvaslayer2" type="CanvasLayer" parent="."]
 
-[node name="death_menu" parent="canvaslayer2" instance=ExtResource("7_7ur8r")]
+[node name="death_menu" parent="canvaslayer2" instance=ExtResource("9_ra5jn")]
 visible = false
 
-[node name="TileDie" type="Area2D" parent="."]
-script = ExtResource("10_7oj8t")
+[node name="TileDeaths" type="Area2D" parent="."]
+script = ExtResource("10_sx4sb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileDie"]
-position = Vector2(743.5, 339.5)
-shape = SubResource("RectangleShape2D_e18wc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileDeaths"]
+position = Vector2(2574, 419)
+shape = SubResource("RectangleShape2D_y5jcv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileDeaths"]
+position = Vector2(2138, 351)
+shape = SubResource("RectangleShape2D_m2cmf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileDeaths"]
+position = Vector2(744.313, 340.5)
+shape = SubResource("RectangleShape2D_abd50")
 
 [connection signal="body_entered" from="FinalArea" to="FinalArea" method="_on_body_entered"]
 [connection signal="body_exited" from="FinalArea" to="FinalArea" method="_on_body_exited"]
-[connection signal="body_entered" from="TileDie" to="TileDie" method="_on_body_entered"]
+[connection signal="body_entered" from="TileDeaths" to="TileDeaths" method="_on_body_entered"]
