@@ -408,6 +408,7 @@ frame = 1
 [node name="PlayerDetection" type="Area2D" parent="."]
 
 [node name="PlayerDetection" type="CollisionShape2D" parent="PlayerDetection"]
+visible = false
 position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_ap08f")
 
