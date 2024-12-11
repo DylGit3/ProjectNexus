@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cbho4m2bhtmcq"]
+[gd_scene load_steps=50 format=3 uid="uid://cbho4m2bhtmcq"]
 
 [ext_resource type="Texture2D" uid="uid://d25npsisgiufn" path="res://Assets/reaper/attacking.png" id="1_6d1uh"]
 [ext_resource type="Script" path="res://Scenes/Player/reaper.gd" id="1_s6iiv"]
@@ -269,43 +269,206 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aq86v"]
-radius = 16.0
-height = 52.0
+radius = 15.0
+height = 56.0
+
+[sub_resource type="Animation" id="Animation_kovk5"]
+resource_name = "death"
+length = 2.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animatedsprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animatedsprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.3, 0.433333, 0.566667, 0.7, 0.833333, 0.966667, 1.1, 1.23333, 1.36667, 1.5, 1.6, 1.73333, 1.86667, 2, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_hynum"]
+resource_name = "attack"
+length = 2.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animatedsprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animatedsprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.5, 0.733333, 0.933333, 1.16667, 1.36667, 1.6, 1.86667, 2.06667, 2.3, 2.53333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageArea/DamageShape:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 0.3, 0.5, 1.86667, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_hoqcp"]
+resource_name = "idle"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animatedsprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animatedsprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageArea/DamageShape:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_j548h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animatedsprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageArea/DamageShape:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eawal"]
+_data = {
+"RESET": SubResource("Animation_j548h"),
+"attack": SubResource("Animation_hynum"),
+"death": SubResource("Animation_kovk5"),
+"idle": SubResource("Animation_hoqcp")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2af7"]
-size = Vector2(58, 66)
+size = Vector2(46, 59.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8fjx"]
-size = Vector2(8, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sa4e8"]
+size = Vector2(51, 62.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahqu0"]
+radius = 210.06
 
 [node name="Reaper" type="CharacterBody2D"]
 script = ExtResource("1_s6iiv")
 
 [node name="animatedsprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -40.5)
+position = Vector2(2, -35)
 scale = Vector2(1, 0.97)
 sprite_frames = SubResource("SpriteFrames_crjbr")
 animation = &"attack"
-frame_progress = 0.523558
+frame = 1
 
 [node name="bodyArea" type="Area2D" parent="."]
 
 [node name="areaBodyShape" type="CollisionShape2D" parent="bodyArea"]
-position = Vector2(0, -36)
+position = Vector2(0, -28)
 shape = SubResource("CapsuleShape2D_aq86v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eawal")
+}
 
 [node name="attackArea" type="Area2D" parent="."]
 
-[node name="attackCollision" type="CollisionShape2D" parent="attackArea"]
-position = Vector2(19, -41)
+[node name="attackAreaCOll" type="CollisionShape2D" parent="attackArea"]
+position = Vector2(19, -31.75)
 shape = SubResource("RectangleShape2D_j2af7")
 
 [node name="bodyShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -36)
+position = Vector2(0, -28)
 shape = SubResource("CapsuleShape2D_aq86v")
 
-[node name="floatShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
-shape = SubResource("RectangleShape2D_d8fjx")
+[node name="DamageArea" type="Area2D" parent="." groups=["reaperDamage"]]
+
+[node name="DamageShape" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(19.5, -32.75)
+shape = SubResource("RectangleShape2D_sa4e8")
+
+[node name="chasearea" type="Area2D" parent="."]
+
+[node name="chaseshape" type="CollisionShape2D" parent="chasearea"]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_ahqu0")
+
+[connection signal="area_entered" from="bodyArea" to="." method="_on_body_area_area_entered"]
+[connection signal="body_entered" from="attackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="attackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="body_entered" from="chasearea" to="." method="_on_chasearea_body_entered"]
+[connection signal="body_exited" from="chasearea" to="." method="_on_chasearea_body_exited"]
