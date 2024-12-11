@@ -6,7 +6,6 @@ var gold = 0
 var playerDMG = 1
 var skeletonDMG = 1
 var mushroomDMG = 2
-var reaperDMG = 1
 var eyeDMG = 1
 var extraJump = false
 
