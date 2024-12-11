@@ -1,9 +1,12 @@
-[gd_scene load_steps=50 format=3 uid="uid://cbho4m2bhtmcq"]
+[gd_scene load_steps=54 format=3 uid="uid://cbho4m2bhtmcq"]
 
 [ext_resource type="Texture2D" uid="uid://d25npsisgiufn" path="res://Assets/reaper/attacking.png" id="1_6d1uh"]
 [ext_resource type="Script" path="res://Scenes/Player/reaper.gd" id="1_s6iiv"]
 [ext_resource type="Texture2D" uid="uid://bmukyrrs6xewr" path="res://Assets/reaper/death.png" id="2_ehqsn"]
 [ext_resource type="Texture2D" uid="uid://trq0ime0hifp" path="res://Assets/reaper/idle.png" id="3_l8gim"]
+[ext_resource type="AudioStream" uid="uid://cb8whn50l1kpq" path="res://Assets/Audio/reaperattacksound1.mp3" id="5_vqhmf"]
+[ext_resource type="AudioStream" uid="uid://bn86xdrraqj6x" path="res://Assets/Audio/reaperattacksound2.mp3" id="6_bl8bw"]
+[ext_resource type="AudioStream" uid="uid://ra0ms0l61xhp" path="res://Assets/Audio/reaperdeath.mp3" id="7_t813m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxddo"]
 atlas = ExtResource("1_6d1uh")
@@ -129,6 +132,10 @@ region = Rect2(600, 100, 100, 100)
 atlas = ExtResource("2_ehqsn")
 region = Rect2(700, 100, 100, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s5cd"]
+atlas = ExtResource("2_ehqsn")
+region = Rect2(800, 100, 100, 100)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ss1nd"]
 atlas = ExtResource("3_l8gim")
 region = Rect2(0, 0, 100, 100)
@@ -245,6 +252,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_02h36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s5cd")
 }],
 "loop": true,
 "name": &"death",
@@ -270,34 +280,33 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aq86v"]
 radius = 15.0
-height = 56.0
+height = 52.0
 
-[sub_resource type="Animation" id="Animation_kovk5"]
-resource_name = "death"
-length = 2.25
+[sub_resource type="Animation" id="Animation_j548h"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("animatedsprite:animation")
+tracks/0/path = NodePath("animatedsprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"death"]
+"values": [1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("animatedsprite:frame")
+tracks/1/path = NodePath("DamageArea/DamageShape:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.233333, 0.3, 0.433333, 0.566667, 0.7, 0.833333, 0.966667, 1.1, 1.23333, 1.36667, 1.5, 1.6, 1.73333, 1.86667, 2, 2.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_hynum"]
@@ -322,7 +331,7 @@ tracks/1/path = NodePath("animatedsprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.3, 0.5, 0.733333, 0.933333, 1.16667, 1.36667, 1.6, 1.86667, 2.06667, 2.3, 2.53333),
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.5, 0.7, 0.9, 1.06667, 1.23333, 1.46667, 1.63333, 1.8, 1.96667, 2.16667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -334,10 +343,68 @@ tracks/2/path = NodePath("DamageArea/DamageShape:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0333333, 0.3, 0.5, 1.86667, 2),
+"times": PackedFloat32Array(0.0333333, 0.3, 0.5, 1.63333, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("attack1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_vqhmf")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/3/use_blend = true
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("attack2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_bl8bw")
+}],
+"times": PackedFloat32Array(1.6)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="Animation" id="Animation_kovk5"]
+resource_name = "death"
+length = 2.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animatedsprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animatedsprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.3, 0.433333, 0.566667, 0.7, 0.833333, 0.966667, 1.1, 1.23333, 1.36667, 1.5, 1.6, 1.7, 1.8, 1.93333, 2.03333, 2.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 }
 
 [sub_resource type="Animation" id="Animation_hoqcp"]
@@ -380,33 +447,6 @@ tracks/2/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_j548h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("animatedsprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DamageArea/DamageShape:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eawal"]
 _data = {
 "RESET": SubResource("Animation_j548h"),
@@ -431,13 +471,13 @@ script = ExtResource("1_s6iiv")
 position = Vector2(2, -35)
 scale = Vector2(1, 0.97)
 sprite_frames = SubResource("SpriteFrames_crjbr")
-animation = &"attack"
+animation = &"death"
 frame = 1
 
 [node name="bodyArea" type="Area2D" parent="."]
 
 [node name="areaBodyShape" type="CollisionShape2D" parent="bodyArea"]
-position = Vector2(0, -28)
+position = Vector2(0, -26)
 shape = SubResource("CapsuleShape2D_aq86v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -452,7 +492,7 @@ position = Vector2(19, -31.75)
 shape = SubResource("RectangleShape2D_j2af7")
 
 [node name="bodyShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -28)
+position = Vector2(0, -26)
 shape = SubResource("CapsuleShape2D_aq86v")
 
 [node name="DamageArea" type="Area2D" parent="." groups=["reaperDamage"]]
@@ -466,6 +506,14 @@ shape = SubResource("RectangleShape2D_sa4e8")
 [node name="chaseshape" type="CollisionShape2D" parent="chasearea"]
 position = Vector2(0, -28)
 shape = SubResource("CircleShape2D_ahqu0")
+
+[node name="attack1" type="AudioStreamPlayer2D" parent="."]
+
+[node name="attack2" type="AudioStreamPlayer2D" parent="."]
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_t813m")
+volume_db = -2.0
 
 [connection signal="area_entered" from="bodyArea" to="." method="_on_body_area_area_entered"]
 [connection signal="body_entered" from="attackArea" to="." method="_on_attack_area_body_entered"]

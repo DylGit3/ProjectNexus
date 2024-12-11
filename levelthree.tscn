@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bfgpi15d8sf2y"]
+[gd_scene load_steps=36 format=4 uid="uid://bfgpi15d8sf2y"]
 
 [ext_resource type="Script" path="res://levelthree.gd" id="1_bpebd"]
 [ext_resource type="PackedScene" uid="uid://pmcdemxkor8q" path="res://Scenes/Menu/pause_menu.tscn" id="2_kk0fg"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d7nj8hkduppa" path="res://Assets/Unsorted/GUI.png" id="9_d55ta"]
 [ext_resource type="PackedScene" uid="uid://vmc2wuyel3m8" path="res://Scenes/Menu/death_menu.tscn" id="9_ra5jn"]
 [ext_resource type="Script" path="res://Scenes/Levels/tile_deaths.gd" id="10_sx4sb"]
+[ext_resource type="PackedScene" uid="uid://cbho4m2bhtmcq" path="res://Scenes/Player/reaper.tscn" id="13_3d3aj"]
 [ext_resource type="Script" path="res://tile_damage.gd" id="15_kuy41"]
 [ext_resource type="Script" path="res://win.gd" id="17_m551r"]
 
@@ -2393,7 +2394,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("5_uwlax")]
-position = Vector2(11477, 332)
+position = Vector2(11389, 327)
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -2452,6 +2453,9 @@ position = Vector2(8081, 230)
 
 [node name="mushroom7" parent="Mobs" instance=ExtResource("7_3ivfe")]
 position = Vector2(9052, 245)
+
+[node name="Reaper" parent="Mobs" instance=ExtResource("13_3d3aj")]
+position = Vector2(11740, 336)
 
 [node name="FinalArea" type="Area2D" parent="."]
 visible = false

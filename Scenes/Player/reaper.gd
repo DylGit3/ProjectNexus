@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 9
+var health = 1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player
 var looking = 1
@@ -15,20 +15,24 @@ func _physics_process(delta: float):
 		health = -100
 		Game.gold += 15
 		$AnimationPlayer.play("death")
+		$death.play()
+		$bodyArea/areaBodyShape.disabled = true
+		$attackArea/attackAreaCOll.disabled = true
+		$DamageArea/DamageShape.disabled = true
 		await get_node("AnimationPlayer").animation_finished
-		self.queue_free()
+		$bodyShape.disabled = true
 	elif health > 0:
 		if is_attacking == false:
 			if chase:
-				$AnimationPlayer.play("run")
+				$AnimationPlayer.play("idle")
 				player = get_node("../../Player/Player")
 				var direction = (player.position - self.position).normalized()
 				if direction.x > 0:
-					get_node("AnimatedSprite2D").flip_h = false
+					$animatedsprite.flip_h = false
 					$DamageArea/DamageShape.position.x = 19.5
 					$attackArea/attackAreaCOll.position.x = 19
 				else:
-					get_node("AnimatedSprite2D").flip_h = true
+					$animatedsprite.flip_h = true
 					$DamageArea/DamageShape.position.x = -19.5
 					$attackArea/attackAreaCOll.position.x = -19
 					
