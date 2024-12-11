@@ -4,7 +4,10 @@ Description: Nexus is an action-packed 2D side-scroller where players control Ni
 and dynamic environments. As Nix, players must utilize patience, pattern recognition, and timing in order to defeat enemies and uncover the forces holding him captive. With engaging gameplay and dynamic level enviorments, Nexus offers a unique platforming 
 for those seeking adventure and challenge.
 
-Instructions: Download all of the game files to begin playing. Once downloaded start the game using godot's start feature (steam access coming soon). Levels must be completed in successive order (eg. level 1 must be completed before level 2 can be played). 
+Instructions: 
+1. Download all game files to begin.
+2. Start the game using Godot's play feature (Steam access coming soon).
+3. Progress through levels sequentially; completing each level unlocks the next (e.g., Level 1 must be cleared before Level 2).
 
 Controls:
 Right, Left: to move in that respective direction
@@ -12,6 +15,7 @@ Up: to jump
 Down: to crouch
 F: to attack
 ESC: to get to the pause menu in game
+Enter: to get to next level at the end of current level
 
 Credits:
 https://edermunizz.itch.io/free-pixel-art-forest
