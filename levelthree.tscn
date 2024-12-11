@@ -2393,7 +2393,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("5_uwlax")]
-position = Vector2(11477, 332)
+position = Vector2(30, 323)
 
 [node name="Mobs" type="Node2D" parent="."]
 
