@@ -12,5 +12,5 @@ func _process(delta):
 	if entered == true:
 		Game.playerHP = 5
 		if Input.is_action_just_pressed("ui_accept"):
-			Game.levelOneComplete = true
+			Game.levelTwoComplete = true
 			get_tree().change_scene_to_file("res://Scenes/Menu/level_selector.tscn")
