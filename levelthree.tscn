@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bfgpi15d8sf2y"]
+[gd_scene load_steps=36 format=4 uid="uid://bfgpi15d8sf2y"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_two.gd" id="1_nptq8"]
 [ext_resource type="PackedScene" uid="uid://pmcdemxkor8q" path="res://Scenes/Menu/pause_menu.tscn" id="2_kk0fg"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://vmc2wuyel3m8" path="res://Scenes/Menu/death_menu.tscn" id="9_ra5jn"]
 [ext_resource type="Script" path="res://Scenes/Levels/tile_deaths.gd" id="10_sx4sb"]
 [ext_resource type="Script" path="res://tile_damage.gd" id="15_kuy41"]
+[ext_resource type="Script" path="res://win.gd" id="17_m551r"]
+[ext_resource type="PackedScene" uid="uid://b5gstxwgbksh2" path="res://Scenes/Menu/you_win.tscn" id="18_7jrb4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlls2"]
 texture = ExtResource("3_07alq")
@@ -2339,8 +2341,8 @@ size = Vector2(45.125, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm703"]
 size = Vector2(767, 13)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rorc4"]
-size = Vector2(255, 68)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wf11"]
+size = Vector2(498, 221)
 
 [node name="levelthree" type="Node2D"]
 script = ExtResource("1_nptq8")
@@ -2388,7 +2390,7 @@ script = SubResource("GDScript_rhbg1")
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("5_uwlax")]
-position = Vector2(29, 322)
+position = Vector2(11387, 296)
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -2562,13 +2564,21 @@ shape = SubResource("RectangleShape2D_7mag3")
 position = Vector2(10720.5, 328.5)
 shape = SubResource("RectangleShape2D_dm703")
 
-[node name="YouWin" type="Area2D" parent="."]
+[node name="win" type="Area2D" parent="."]
+script = ExtResource("17_m551r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YouWin"]
-position = Vector2(12191.5, 31)
-shape = SubResource("RectangleShape2D_rorc4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="win"]
+position = Vector2(11737, 231)
+shape = SubResource("RectangleShape2D_4wf11")
+
+[node name="winlayer" type="CanvasLayer" parent="."]
+
+[node name="YouWin" parent="winlayer" instance=ExtResource("18_7jrb4")]
+visible = false
 
 [connection signal="body_entered" from="FinalArea" to="FinalArea" method="_on_body_entered"]
 [connection signal="body_exited" from="FinalArea" to="FinalArea" method="_on_body_exited"]
 [connection signal="body_entered" from="TileDeaths" to="TileDeaths" method="_on_body_entered"]
 [connection signal="body_entered" from="TileDamage" to="TileDamage" method="_on_body_entered"]
+[connection signal="body_entered" from="win" to="win" method="_on_body_entered"]
+[connection signal="body_exited" from="win" to="win" method="_on_body_exited"]
