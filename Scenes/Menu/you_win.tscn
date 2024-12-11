@@ -151,3 +151,5 @@ theme = ExtResource("4_atwle")
 theme_override_font_sizes/font_size = 19
 text = " Return to Main Menu"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
