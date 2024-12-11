@@ -1,0 +1,171 @@
+[gd_scene load_steps=15 format=3 uid="uid://b6a7thr85bk71"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/youwin.gd" id="1_bny18"]
+[ext_resource type="Texture2D" uid="uid://djjs86wegl3rr" path="res://Assets/Pictures/Background.png" id="1_g2gh7"]
+[ext_resource type="Texture2D" uid="uid://hw2bapb8g6g7" path="res://Assets/Pictures/Layer_0003_6.png" id="2_spv7v"]
+[ext_resource type="Texture2D" uid="uid://d7nj8hkduppa" path="res://Assets/Unsorted/GUI.png" id="3_tipis"]
+[ext_resource type="Theme" uid="uid://bmr40juj7gfgd" path="res://Resources/button_default.tres" id="5_8ygq5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j5go7"]
+texture = ExtResource("3_tipis")
+region_rect = Rect2(1, 33, 46, 45)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pu7oi"]
+texture = ExtResource("3_tipis")
+region_rect = Rect2(8, 162, 7, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1r04"]
+texture = ExtResource("3_tipis")
+region_rect = Rect2(80.9093, 130.453, 13.5711, 10.1431)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3m5hf"]
+texture = ExtResource("3_tipis")
+region_rect = Rect2(35, 178, 7, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i7c5e"]
+texture = ExtResource("3_tipis")
+region_rect = Rect2(38, 130, 6, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lkd2"]
+texture = ExtResource("3_tipis")
+region_rect = Rect2(67, 129, 5, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlrem"]
+texture = ExtResource("3_tipis")
+region_rect = Rect2(103, 163, 5, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8vrdn"]
+texture = ExtResource("3_tipis")
+region_rect = Rect2(103, 164, 5, 5)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbk17"]
+texture = ExtResource("3_tipis")
+region_rect = Rect2(169, 131, 5, 10)
+
+[node name="youwin" type="Node2D"]
+script = ExtResource("1_bny18")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1170, 0)
+
+[node name="back" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(589, 296)
+scale = Vector2(1.27909, 0.916772)
+texture = ExtResource("1_g2gh7")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1170, 0)
+
+[node name="CaveMiddle" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(609.5, -17.9991)
+scale = Vector2(1.27047, 1.2232)
+texture = ExtResource("2_spv7v")
+
+[node name="PanelContainer" type="PanelContainer" parent="ParallaxBackground"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.5
+offset_top = -285.5
+offset_right = 500.5
+offset_bottom = 285.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="ParallaxBackground/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j5go7")
+
+[node name="Panel3" type="Panel" parent="ParallaxBackground/PanelContainer/Panel"]
+layout_mode = 2
+offset_left = 353.0
+offset_top = 211.0
+offset_right = 450.0
+offset_bottom = 327.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pu7oi")
+
+[node name="Panel2" type="Panel" parent="ParallaxBackground/PanelContainer/Panel"]
+layout_mode = 2
+offset_left = 124.5
+offset_top = 179.5
+offset_right = 326.5
+offset_bottom = 371.5
+theme_override_styles/panel = SubResource("StyleBoxTexture_u1r04")
+
+[node name="Panel" type="Panel" parent="ParallaxBackground/PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 216.0
+offset_right = 537.0
+offset_bottom = 353.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3m5hf")
+
+[node name="Panel4" type="Panel" parent="ParallaxBackground/PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 213.0
+offset_right = 610.0
+offset_bottom = 327.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_i7c5e")
+
+[node name="Panel5" type="Panel" parent="ParallaxBackground/PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 197.0
+offset_right = 667.0
+offset_bottom = 340.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2lkd2")
+
+[node name="Panel7" type="Panel" parent="ParallaxBackground/PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 208.0
+offset_right = 711.0
+offset_bottom = 343.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qlrem")
+
+[node name="Panel6" type="Panel" parent="ParallaxBackground/PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 212.0
+offset_right = 787.0
+offset_bottom = 328.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pu7oi")
+
+[node name="Panel8" type="Panel" parent="ParallaxBackground/PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 217.0
+offset_right = 848.0
+offset_bottom = 329.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8vrdn")
+
+[node name="Panel9" type="Panel" parent="ParallaxBackground/PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 198.0
+offset_right = 935.0
+offset_bottom = 382.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_mbk17")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.399306
+anchor_top = 0.649691
+anchor_right = 0.58941
+anchor_bottom = 0.759259
+offset_left = 442.0
+offset_top = 469.0
+offset_right = 643.0
+offset_bottom = 496.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_8ygq5")
+theme_override_font_sizes/font_size = 19
+text = " Return to Main Menu"
+metadata/_edit_use_anchors_ = true
