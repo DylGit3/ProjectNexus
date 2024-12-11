@@ -29,7 +29,7 @@ func _on_level_three_button_pressed() -> void:
 	$ClickSound.play()
 	await get_tree().create_timer(1).timeout
 	MenuMusic.stop()
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_three.tscn")
+	get_tree().change_scene_to_file("res://levelthree.tscn")
 
 
 func _on_back_button_pressed() -> void:
