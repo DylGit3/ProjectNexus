@@ -419,7 +419,7 @@ radius = 16.0
 height = 52.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2kqt"]
-radius = 267.0
+radius = 209.002
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dd2rd"]
 size = Vector2(52, 55)
@@ -457,7 +457,6 @@ shape = SubResource("CapsuleShape2D_t85du")
 [node name="detectionarea" type="Area2D" parent="."]
 
 [node name="detectionshape" type="CollisionShape2D" parent="detectionarea"]
-visible = false
 position = Vector2(0, -36)
 shape = SubResource("CircleShape2D_r2kqt")
 

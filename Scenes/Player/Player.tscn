@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dd4wg4onyrmqy"]
+[gd_scene load_steps=84 format=3 uid="uid://dd4wg4onyrmqy"]
 
 [ext_resource type="Texture2D" uid="uid://bvu2ryb66coqi" path="res://Assets/Charecter stuff/_Hit.png" id="1_6loyd"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bmdyc"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://banfvjb0jgc2k" path="res://Assets/Charecter stuff/_Death.png" id="7_jy0rt"]
 [ext_resource type="AudioStream" uid="uid://che1it0s4ixc7" path="res://Assets/Audio/PlayerAttack.mp3" id="13_pqu1y"]
 [ext_resource type="AudioStream" uid="uid://oedftog716g4" path="res://Assets/Audio/PlayerStep.wav" id="14_7b20o"]
-[ext_resource type="AudioStream" uid="uid://dlo2khbewfyp0" path="res://Assets/Audio/PlayerTempHurt.mp3" id="15_u2xbd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8wlp"]
 atlas = ExtResource("3_5s3nb")
@@ -871,7 +870,6 @@ stream = ExtResource("13_pqu1y")
 stream = ExtResource("14_7b20o")
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("15_u2xbd")
 volume_db = -10.89
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
