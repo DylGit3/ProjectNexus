@@ -1723,16 +1723,25 @@ position = Vector2(1489, 334)
 position = Vector2(2136, 320)
 
 [node name="Skeleton7" parent="Mobs" instance=ExtResource("5_do8j8")]
-position = Vector2(2321, 99)
+position = Vector2(6207, 323)
 
 [node name="Skeleton8" parent="Mobs" instance=ExtResource("5_do8j8")]
-position = Vector2(2340, 87)
+position = Vector2(4994, 310)
 
 [node name="Skeleton9" parent="Mobs" instance=ExtResource("5_do8j8")]
 position = Vector2(3040, 328)
 
 [node name="flyingEye" parent="Mobs" instance=ExtResource("8_h04dl")]
 position = Vector2(568, 334)
+
+[node name="flyingEye2" parent="Mobs" instance=ExtResource("8_h04dl")]
+position = Vector2(4368, 326)
+
+[node name="flyingEye3" parent="Mobs" instance=ExtResource("8_h04dl")]
+position = Vector2(6859, 326)
+
+[node name="flyingEye4" parent="Mobs" instance=ExtResource("8_h04dl")]
+position = Vector2(6046, 300)
 
 [node name="DeathCanvas" type="CanvasLayer" parent="."]
 
