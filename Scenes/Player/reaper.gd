@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 1
+var health = 7
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player
 var looking = 1
